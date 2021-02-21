@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TestFragment1">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/dark_coffee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/txt_title8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toEndOf="@+id/btn_back"
+            android:layout_toRightOf="@+id/btn_back"
+            android:gravity="center"
+            android:text="TARİH"
+            android:textColor="@color/set_sail_sampange"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/textViewTest10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/dark_coffee"
+        android:textSize="@dimen/o_mu_bu_mu1_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioButonTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTest10">
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/anasayfa_buton_size"
+            android:background="@color/tide_water_green"
+            android:text="A ŞIKKI"
+            android:textColor="@color/set_sail_sampange"
+            android:textSize="@dimen/bbm_textView_size"
+            tools:layout_editor_absoluteX="6dp"
+            tools:layout_editor_absoluteY="241dp"
+            android:minHeight="40dp"/>
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/anasayfa_buton_size"
+            android:background="@color/tide_water_green"
+            android:text="B ŞIKKI"
+            android:textColor="@color/set_sail_sampange"
+            android:textSize="@dimen/bbm_textView_size"
+            tools:layout_editor_absoluteX="103dp"
+            tools:layout_editor_absoluteY="325dp"
+            android:minHeight="40dp"/>
+        <RadioButton
+            android:id="@+id/radioButton9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/anasayfa_buton_size"
+            android:background="@color/tide_water_green"
+            android:text="C ŞIKKI"
+            android:textColor="@color/set_sail_sampange"
+            android:textSize="@dimen/bbm_textView_size"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="417dp"
+            android:minHeight="40dp"/>
+        <RadioButton
+            android:id="@+id/radioButton10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/anasayfa_buton_size"
+            android:background="@color/tide_water_green"
+            android:text="D ŞIKKI"
+            android:textColor="@color/set_sail_sampange"
+            android:textSize="@dimen/bbm_textView_size"
+            tools:layout_editor_absoluteX="106dp"
+            tools:layout_editor_absoluteY="486dp"
+            android:minHeight="40dp"/>
+        <RadioButton
+            android:id="@+id/radioButton11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/anasayfa_buton_size"
+            android:background="@color/tide_water_green"
+            android:text="E ŞIKKI"
+            android:textColor="@color/set_sail_sampange"
+            android:textSize="@dimen/bbm_textView_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="118dp"
+            android:minHeight="40dp"/>
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/radio_button_test"
+        android:padding="15dp"
+        android:src="@drawable/ic_baseline_arrow_forward_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/radio_button_test"
+        android:padding="15dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

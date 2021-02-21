@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TestFragment2">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/dark_coffee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/txt_title9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toEndOf="@+id/btn_back"
+            android:layout_toRightOf="@+id/btn_back"
+            android:gravity="center"
+            android:text="COĞRAFYA"
+            android:textColor="@color/set_sail_sampange"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+
+    <TextView
+        android:id="@+id/textViewTest11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/dark_coffee"
+        android:textSize="@dimen/o_mu_bu_mu1_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <RadioGroup
+        android:id="@+id/radioButonTest2"
+        android:layout_width="374dp"
+        android:layout_height="292dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTest11">
+    <RadioButton
+        android:id="@+id/radioButton11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/anasayfa_buton_size"
+        android:background="@color/tide_water_green"
+        android:text="A ŞIKKI"
+        android:textColor="@color/set_sail_sampange"
+        android:textSize="@dimen/bbm_textView_size"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="241dp" />
+    <RadioButton
+        android:id="@+id/radioButton12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/anasayfa_buton_size"
+        android:background="@color/tide_water_green"
+        android:text="B ŞIKKI"
+        android:textColor="@color/set_sail_sampange"
+        android:textSize="@dimen/bbm_textView_size"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="325dp" />
+    <RadioButton
+        android:id="@+id/radioButton13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/anasayfa_buton_size"
+        android:background="@color/tide_water_green"
+        android:text="C ŞIKKI"
+        android:textColor="@color/set_sail_sampange"
+        android:textSize="@dimen/bbm_textView_size"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="417dp" />
+    <RadioButton
+        android:id="@+id/radioButton14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/anasayfa_buton_size"
+        android:background="@color/tide_water_green"
+        android:text="D ŞIKKI"
+        android:textColor="@color/set_sail_sampange"
+        android:textSize="@dimen/bbm_textView_size"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="486dp" />
+    <RadioButton
+        android:id="@+id/radioButton15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/anasayfa_buton_size"
+        android:background="@color/tide_water_green"
+        android:text="E ŞIKKI"
+        android:textColor="@color/set_sail_sampange"
+        android:textSize="@dimen/bbm_textView_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="118dp" />
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

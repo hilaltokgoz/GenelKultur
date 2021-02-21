@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources  >
+    <dimen name="list_row_text_left_margin">5dp</dimen>
+    <dimen name="anasayfa_buton_size">20dp</dimen>
+    <dimen name="anasayfa_textView_size">30dp</dimen>
+    <dimen name="bbm_textView_size">25dp</dimen>
+    <dimen name="bbm1toA_textView_size">45dp</dimen>
+    <dimen name="o_mu_bu_mu_marjin_left">30dp</dimen>
+    <dimen name="o_mu_bu_mu1_text_size">40dp</dimen>
+</resources>

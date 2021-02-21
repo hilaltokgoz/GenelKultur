@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/OMuBuMuFragment"
+        android:name="com.genelkultur.OMuBuMuFragment"
+        android:label="fragment_o_mu_bu_mu"
+        tools:layout="@layout/fragment_o_mu_bu_mu" >
+        <action
+            android:id="@+id/action_OMuBuMuFragment_to_OMuBuMuFragment1"
+            app:destination="@id/OMuBuMuFragment1" />
+        <action
+            android:id="@+id/action_OMuBuMuFragment_to_OMuBuMuFragment2"
+            app:destination="@id/OMuBuMuFragment2" />
+        <action
+            android:id="@+id/action_OMuBuMuFragment_to_omuBuMuFragment3"
+            app:destination="@id/omuBuMuFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/OMuBuMuFragment1"
+        android:name="com.genelkultur.OMuBuMuFragment1"
+        android:label="fragment_o_mu_bu_mu1"
+        tools:layout="@layout/fragment_o_mu_bu_mu1" />
+    <fragment
+        android:id="@+id/OMuBuMuFragment2"
+        android:name="com.genelkultur.OMuBuMuFragment2"
+        android:label="fragment_o_mu_bu_mu2"
+        tools:layout="@layout/fragment_o_mu_bu_mu2" />
+    <fragment
+        android:id="@+id/omuBuMuFragment3"
+        android:name="com.genelkultur.OmuBuMuFragment3"
+        android:label="fragment_omu_bu_mu3"
+        tools:layout="@layout/fragment_omu_bu_mu3" />
+    <fragment
+        android:id="@+id/bunlariBiliyorMusunFragment"
+        android:name="com.genelkultur.BunlariBiliyorMusunFragment"
+        android:label="fragment_bunlari_biliyor_musun"
+        tools:layout="@layout/fragment_bunlari_biliyor_musun" >
+        <action
+            android:id="@+id/action_bunlariBiliyorMusunFragment_to_bunlariBiliyorMusunFragment1"
+            app:destination="@id/bunlariBiliyorMusunFragment1" />
+        <action
+            android:id="@+id/action_bunlariBiliyorMusunFragment_to_bunlariBiliyorMusunFragment2"
+            app:destination="@id/bunlariBiliyorMusunFragment2" />
+        <action
+            android:id="@+id/action_bunlariBiliyorMusunFragment_to_bunlariBiliyorMusunFragment3"
+            app:destination="@id/bunlariBiliyorMusunFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/bunlariBiliyorMusunFragment1"
+        android:name="com.genelkultur.BunlariBiliyorMusunFragment1"
+        android:label="fragment_bunlari_biliyor_musun1"
+        tools:layout="@layout/fragment_bunlari_biliyor_musun1" >
+        <action
+            android:id="@+id/action_bunlariBiliyorMusunFragment1_to_BBMFragment1toA"
+            app:destination="@id/BBMFragment1toA" />
+
+        <argument
+            android:name="information"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
+    <fragment
+        android:id="@+id/bunlariBiliyorMusunFragment2"
+        android:name="com.genelkultur.BunlariBiliyorMusunFragment2"
+        android:label="fragment_bunlari_biliyor_musun2"
+        tools:layout="@layout/fragment_bunlari_biliyor_musun2" >
+        <action
+            android:id="@+id/action_bunlariBiliyorMusunFragment2_to_BBMFragment2toA"
+            app:destination="@id/BBMFragment2toA" />
+    </fragment>
+    <fragment
+        android:id="@+id/bunlariBiliyorMusunFragment3"
+        android:name="com.genelkultur.BunlariBiliyorMusunFragment3"
+        android:label="fragment_bunlari_biliyor_musun3"
+        tools:layout="@layout/fragment_bunlari_biliyor_musun3" >
+        <action
+            android:id="@+id/action_bunlariBiliyorMusunFragment3_to_BBmFragment3toA"
+            app:destination="@id/BBmFragment3toA" />
+    </fragment>
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.genelkultur.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/action_anasayfaFragment_to_bunlariBiliyorMusunFragment"
+            app:destination="@id/bunlariBiliyorMusunFragment" />
+        <action
+            android:id="@+id/action_anasayfaFragment_to_OMuBuMuFragment"
+            app:destination="@id/OMuBuMuFragment" />
+        <action
+            android:id="@+id/action_anasayfaFragment_to_testFragment"
+            app:destination="@id/testFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.genelkultur.TestFragment"
+        android:label="fragment_test"
+        tools:layout="@layout/fragment_test" >
+        <action
+            android:id="@+id/action_testFragment_to_testFragment1"
+            app:destination="@id/testFragment1" />
+        <action
+            android:id="@+id/action_testFragment_to_testFragment2"
+            app:destination="@id/testFragment2" />
+        <action
+            android:id="@+id/action_testFragment_to_testFragment3"
+            app:destination="@id/testFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/testFragment1"
+        android:name="com.genelkultur.TestFragment1"
+        android:label="fragment_test1"
+        tools:layout="@layout/fragment_test1" />
+    <fragment
+        android:id="@+id/testFragment2"
+        android:name="com.genelkultur.TestFragment2"
+        android:label="fragment_test3"
+        tools:layout="@layout/fragment_test3" />
+    <fragment
+        android:id="@+id/testFragment3"
+        android:name="com.genelkultur.TestFragment3"
+        android:label="fragment_test4"
+        tools:layout="@layout/fragment_test4" />
+    <fragment
+        android:id="@+id/BBMFragment1toA"
+        android:name="com.genelkultur.BBMFragment1toA"
+        android:label="fragment_b_b_m_fragment1to_a"
+        tools:layout="@layout/fragment_b_b_m_fragment1to_a" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.genelkultur.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/BBMFragment2toA"
+        android:name="com.genelkultur.BBMFragment2toA"
+        android:label="fragment_b_b_m_fragment2to_a"
+        tools:layout="@layout/fragment_b_b_m_fragment2to_a" >
+        <argument
+            android:name="cografya"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/BBmFragment3toA"
+        android:name="com.genelkultur.BBmFragment3toA"
+        android:label="fragment_b_bm_fragment3to_a"
+        tools:layout="@layout/fragment_b_bm_fragment3to_a" >
+        <argument
+            android:name="bilgi"
+            app:argType="string" />
+    </fragment>
+</navigation>
