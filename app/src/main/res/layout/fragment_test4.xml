@@ -33,18 +33,20 @@
             android:textSize="25sp"
             android:textStyle="bold" />
     </com.google.android.material.appbar.AppBarLayout>
+
     <TextView
-        android:id="@+id/time_button2"
-        android:layout_width="100dp"
+        android:id="@+id/tv_guncel_time"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="15dp"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
         android:background="@color/set_sail_sampange"
         android:gravity="center_vertical"
         android:minHeight="50dp"
         android:text="Süre:   "
         android:textColor="@color/dark_coffee"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewTest11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout10">
 

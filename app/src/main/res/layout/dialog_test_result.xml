@@ -40,8 +40,8 @@
                         android:text="Doğru Sayısı :"
                         android:textColor="@color/tide_water_green" />
 
-                    <EditText
-                        android:id="@+id/editTextNumber10"
+                    <TextView
+                        android:id="@+id/tv_true_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -63,8 +63,8 @@
                         android:text="Yanlış Sayısı :"
                         android:textColor="@color/tide_water_green" />
 
-                    <EditText
-                        android:id="@+id/editTextNumber11"
+                    <TextView
+                        android:id="@+id/tv_false_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -87,8 +87,8 @@
                     android:text="Net Sayısı :"
                     android:textColor="@color/tide_water_green" />
 
-                <EditText
-                    android:id="@+id/editTextNumber12"
+                <TextView
+                    android:id="@+id/tv_net_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -100,7 +100,7 @@
       <Button
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:id="@+id/result_button_id"
+          android:id="@+id/btn_result"
           android:text="YENİ TESTE BAŞLA"
           android:textSize="20sp"
           android:background="@color/tide_water_green"
