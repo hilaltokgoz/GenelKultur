@@ -62,7 +62,7 @@ class TestFragment3 : Fragment() {
                             tv_guncel_time.visibility=View.VISIBLE
                             tv_guncel_time.text = "Süre : $time dk"
                             time--
-                            handler.postDelayed(this, 60000)  ///saniye ayarladık
+                            handler.postDelayed(this, 1000)  ///saniye ayarladık
                         }
 
                     }
@@ -86,7 +86,7 @@ class TestFragment3 : Fragment() {
 
     }
     private fun timeEnd(){
-        time=0
+        time=-1
         val dialogResult=Dialog(requireContext())
         dialogResult.setContentView(R.layout.dialog_test_result)
         dialogResult.show()

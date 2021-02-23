@@ -82,7 +82,7 @@ class TestFragment2 : Fragment() {
 
  }
     private fun timeEnd(){
-        time=0
+        time=-1
         val dialogResult=Dialog(requireContext())
         dialogResult.setContentView(R.layout.dialog_test_result)
         dialogResult.show()

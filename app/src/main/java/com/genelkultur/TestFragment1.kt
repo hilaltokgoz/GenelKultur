@@ -70,6 +70,7 @@ class TestFragment1 : Fragment() {
                         }
                         else if(time!=-1)
                         {
+
                             tv_time.visibility=View.VISIBLE
                             tv_time.text = "Süre : $time dk"
                             time--
@@ -106,7 +107,7 @@ class TestFragment1 : Fragment() {
         //Todo:show result dialogr
         //todo: rouintg new test
 
-        time=0
+        time=-1
         val dialogResult=Dialog(requireContext())
         dialogResult.setContentView(R.layout.dialog_test_result)
         dialogResult.show()
