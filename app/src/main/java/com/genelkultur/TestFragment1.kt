@@ -25,8 +25,6 @@ class TestFragment1 : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
     }
 
     override fun onCreateView(
@@ -35,14 +33,11 @@ class TestFragment1 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_test1, container, false)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showSettingsDialog()
-
-
 
     }
 
@@ -119,7 +114,8 @@ class TestFragment1 : Fragment() {
         dialogResult.tv_false_number.text=trueResponse.toString()
         if (false3deltrue){
             dialogResult.ll_net_count.visibility=View.VISIBLE
-            dialogResult.tv_net_number.text=(trueResponse-(falseResponse/3)).toString()
+         dialogResult.tv_net_number.text=(trueResponse-(falseResponse/3)).toString()
+
         }
         else    dialogResult.ll_net_count.visibility=View.GONE
         dialogResult.btn_result.setOnClickListener { //dialoğa yönlendir.
