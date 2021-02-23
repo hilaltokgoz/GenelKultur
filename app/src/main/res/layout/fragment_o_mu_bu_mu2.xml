@@ -70,6 +70,7 @@
 
         <RadioButton
             android:id="@+id/radioButton4"
+            android:buttonTint="@color/dark_coffee"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
@@ -84,6 +85,7 @@
 
         <RadioButton
             android:id="@+id/radioButton3"
+            android:buttonTint="@color/dark_coffee"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"

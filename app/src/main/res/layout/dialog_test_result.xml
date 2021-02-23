@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="20dp">
         <LinearLayout
+            android:id="@+id/ll_test_result"
             android:background="@color/light_water_green"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -17,112 +18,95 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Test Ayarları"
+                android:text="Test Sonucu"
                 android:textSize="30sp"
                 android:gravity="center"
                 android:layout_marginBottom="10dp"
                 android:textColor="@color/dark_coffee"/>
 
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RadioButton
-                    android:id="@+id/radio_btn_random"
+
+                <LinearLayout
+                    android:id="@+id/ll_true_count"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Rastgele Sor"
-                    android:buttonTint="@color/tide_water_green"
-                    android:textSize="18sp"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_marginBottom="10dp"
-                    android:checked="true"
-                    android:textColor="@color/tide_water_green"/>
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/radio_btn_clasic"
-                    android:buttonTint="@color/tide_water_green"
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text="Doğru Sayısı :"
+                        android:textColor="@color/tide_water_green" />
+
+                    <EditText
+                        android:id="@+id/editTextNumber10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/tide_water_green"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_false_count"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="Klasik Test"
-                    android:textSize="18sp"
-                    android:textColor="@color/tide_water_green"/>
+                    android:layout_marginHorizontal="10dp"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text="Yanlış Sayısı :"
+                        android:textColor="@color/tide_water_green" />
 
-            </RadioGroup>
+                    <EditText
+                        android:id="@+id/editTextNumber11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/tide_water_green"/>
+
+                </LinearLayout>
             <LinearLayout
-                android:id="@+id/ll_clasic_settings"
+                android:id="@+id/ll_net_count"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:id="@+id/ll_clasic_count"
-                    android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
+                    android:textSize="18sp"
+                    android:text="Net Sayısı :"
+                    android:textColor="@color/tide_water_green" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:text="Adet :"
-                        android:textColor="@color/tide_water_green" />
-
-                    <EditText
-                        android:id="@+id/editTextNumber2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="number"
-                        android:textColor="@color/tide_water_green"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/ll_clasic_time"
-                    android:layout_width="match_parent"
+                <EditText
+                    android:id="@+id/editTextNumber12"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:orientation="horizontal">
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:text="Süre :"
-                        android:textColor="@color/tide_water_green" />
-
-                    <EditText
-                        android:id="@+id/editTextNumber"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="number"
-                        android:textColor="@color/tide_water_green"/>
-
-                </LinearLayout>
-                <CheckBox
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="3 Yanlış 1 Doğruyu Götürsün."
-                    android:buttonTint="@color/dark_coffee"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number"
                     android:textColor="@color/tide_water_green"/>
             </LinearLayout>
 
-            <Button
-                android:id="@+id/btn_start"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Başla"
-                android:textSize="20sp"
-                android:background="@color/tide_water_green"
-                android:textColor="@color/set_sail_sampange"/>
+      <Button
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/result_button_id"
+          android:text="YENİ TESTE BAŞLA"
+          android:textSize="20sp"
+          android:background="@color/tide_water_green"
+          android:textColor="@color/set_sail_sampange">
+      </Button>
 
         </LinearLayout>
-
-
     </androidx.cardview.widget.CardView>
-
 </FrameLayout>

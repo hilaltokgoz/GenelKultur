@@ -16,9 +16,10 @@
     <color name="orange_turkish">#ff9f1a</color>
     <color name="hardal">#DAA520</color>
     <color name="light_hardal">#F6F4EC</color>
-
+    <color name="yellow_hardal">#E4D4A9</color>
     <color name="set_sail_sampange">#FAEBD7</color>
     <color name="tide_water_green">#2F4F4F</color>
+    <color name="light_water_green">#F4F4F4</color>
     <color name="kahverengi">#B37342</color>
     <color name="morumsu">#AD6F84</color>
     <color name="gray_">#7A8387</color>

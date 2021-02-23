@@ -77,6 +77,7 @@
         android:autoSizeMaxTextSize="@dimen/anasayfa_buton_size"
         android:background="@color/set_sail_sampange"
         android:text="RadioButton"
+        android:buttonTint="@color/dark_coffee"
         android:textColor="@color/tide_water_green"
         android:textSize="@dimen/bbm_textView_size" />
 
@@ -89,6 +90,7 @@
         android:autoSizeMaxTextSize="@dimen/anasayfa_buton_size"
         android:background="@color/set_sail_sampange"
         android:text="RadioButton"
+        android:buttonTint="@color/dark_coffee"
         android:textColor="@color/tide_water_green"
         android:textSize="@dimen/bbm_textView_size" />
 </RadioGroup>
