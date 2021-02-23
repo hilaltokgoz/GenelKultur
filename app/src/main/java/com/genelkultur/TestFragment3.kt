@@ -98,7 +98,7 @@ class TestFragment3 : Fragment() {
 
         }
         else    dialogResult.ll_net_count.visibility=View.GONE
-        dialogResult.btn_result.setOnClickListener { //dialoğa yönlendir.
+        dialogResult.btn_result.setOnClickListener { //dialoğa yönlendirmesi yapıldı
             dialogResult.cancel()
             showSettingsDialogGuncel()
         }
