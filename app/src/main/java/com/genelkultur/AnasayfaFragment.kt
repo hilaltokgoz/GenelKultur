@@ -34,6 +34,7 @@ class AnasayfaFragment : Fragment() {
 
 
        //REALTİME DATABASE BAŞLANGIÇ
+        //sdk ler eklendikten sonra firebase e eleman ekledik.
 // Write a message to the database
         val database = Firebase.database
         val myRef = database.getReference("message")
