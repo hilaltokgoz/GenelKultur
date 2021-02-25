@@ -1,19 +1,17 @@
 package com.genelkultur
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import com.google.android.material.appbar.AppBarLayout
-import kotlinx.android.synthetic.main.activity_main.*
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_anasayfa.*
 
 
 class AnasayfaFragment : Fragment() {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -31,6 +29,16 @@ class AnasayfaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val user: MutableMap<String, Any> = HashMap()
+
+
+       //REALTİME DATABASE BAŞLANGIÇ
+// Write a message to the database
+        val database = Firebase.database
+        val myRef = database.getReference("message")
+
+        myRef.setValue("Hello, World!")
 
 //bbm buton id: button
      button.setOnClickListener {

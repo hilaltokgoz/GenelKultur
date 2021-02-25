@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "698685636049",
+    "firebase_url": "https://kotlingenelkultur-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "kotlingenelkultur",
     "storage_bucket": "kotlingenelkultur.appspot.com"
   },
