@@ -47,8 +47,8 @@
             android:id="@+id/action_bunlariBiliyorMusunFragment_to_bunlariBiliyorMusunFragment2"
             app:destination="@id/bunlariBiliyorMusunFragment2" />
         <action
-            android:id="@+id/action_bunlariBiliyorMusunFragment_to_bunlariBiliyorMusunFragment3"
-            app:destination="@id/bunlariBiliyorMusunFragment3" />
+            android:id="@+id/action_bunlariBiliyorMusunFragment_to_BBmFragment3toA"
+            app:destination="@id/BBmFragment3toA" />
     </fragment>
     <fragment
         android:id="@+id/bunlariBiliyorMusunFragment1"
@@ -77,11 +77,7 @@
         android:id="@+id/bunlariBiliyorMusunFragment3"
         android:name="com.genelkultur.BunlariBiliyorMusunFragment3"
         android:label="fragment_bunlari_biliyor_musun3"
-        tools:layout="@layout/fragment_bunlari_biliyor_musun3" >
-        <action
-            android:id="@+id/action_bunlariBiliyorMusunFragment3_to_BBmFragment3toA"
-            app:destination="@id/BBmFragment3toA" />
-    </fragment>
+        tools:layout="@layout/fragment_bunlari_biliyor_musun3" />
     <fragment
         android:id="@+id/anasayfaFragment"
         android:name="com.genelkultur.AnasayfaFragment"

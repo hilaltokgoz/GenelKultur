@@ -36,15 +36,12 @@ class BunlariBiliyorMusunFragment3 : Fragment() {
 
        listViewGuncel.onItemClickListener= AdapterView.OnItemClickListener { parent, view, position, id ->
            val konu = konular[position]
-           val action =
-               BunlariBiliyorMusunFragment3Directions.actionBunlariBiliyorMusunFragment3ToBBmFragment3toA(
-                   konu
-               )
-           listViewGuncel.findNavController().navigate(action)
+          // val action = BunlariBiliyorMusunFragment3Directions.actionBunlariBiliyorMusunFragment3ToBBmFragment3toA(konu)
+          // listViewGuncel.findNavController().navigate(action)
 
 
-       }}
-
+       }
+       }
         }
 
 

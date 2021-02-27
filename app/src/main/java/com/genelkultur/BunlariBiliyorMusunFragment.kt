@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_bunlari_biliyor_musun.*
 
 
@@ -40,8 +42,8 @@ class BunlariBiliyorMusunFragment : Fragment() {
         }
 
         button12.setOnClickListener {
-            val action=BunlariBiliyorMusunFragmentDirections.actionBunlariBiliyorMusunFragmentToBunlariBiliyorMusunFragment3()
-            Navigation.findNavController(it).navigate(action)
+           //val action=BunlariBiliyorMusunFragmentDirections.actionBunlariBiliyorMusunFragmentToBBmFragment3toA(Firebase.database.getReference())
+            //Navigation.findNavController(it).navigate(action)
         }
 
 
