@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminActivity">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:scrollbars="vertical">
+
+    <RadioGroup
+        android:id="@+id/radioGroupBolumler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButtonBBM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Bunlari Biliyor Musun?"
+            tools:layout_editor_absoluteX="93dp"
+            tools:layout_editor_absoluteY="85dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O Mu Bu Mu?"
+            tools:layout_editor_absoluteX="95dp"
+            tools:layout_editor_absoluteY="143dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test"
+            tools:layout_editor_absoluteX="95dp"
+            tools:layout_editor_absoluteY="199dp" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroupDersler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupBolumler">
+
+        <RadioButton
+            android:id="@+id/radioButtonTarih"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Tarih"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioButton
+            android:id="@+id/radioButtonCoğrafya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coğrafya"
+
+            tools:layout_editor_absoluteY="305dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonGuncel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Güncel" />
+
+        <RadioButton
+            android:id="@+id/radioButtonVatandaslik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vatandaslik" />
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupDersler">
+
+        <LinearLayout
+            android:id="@+id/ll_bunlari_biliyormusun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <EditText
+                android:id="@+id/et_bunlari_biliyormusun_konu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="konu"
+                android:textColorHint="@android:color/black" />
+
+            <EditText
+                android:id="@+id/et_bunlari_biliyormusun_bilgi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="bilgi"
+                android:textColorHint="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_bunlari_biliyormusun_ekle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ekle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_omu_bumu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/et_omu_bumu_soru"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="soru"
+                android:textColorHint="@android:color/black" />
+
+            <EditText
+                android:id="@+id/et_omu_bumu_dogru_cevap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="dogru cevap"
+                android:textColorHint="@android:color/black" />
+
+            <EditText
+                android:id="@+id/et_omu_bumu_yanlis_cevap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="yanlis cevap"
+                android:textColorHint="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_omu_bumu_ekle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ekle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/et_test_soru"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="soru"
+                android:textColorHint="@android:color/black" />
+
+            <EditText
+                android:id="@+id/et_test_dogru_cevap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="dogru cevap"
+                android:textColorHint="@android:color/black" />
+
+            <EditText
+                android:id="@+id/et_omu_test_yanlis_cevap1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="yanlis cevap1"
+                android:textColorHint="@android:color/black" />
+
+            <EditText
+                android:id="@+id/et_omu_test_yanlis_cevap2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="yanlis cevap2"
+                android:textColorHint="@android:color/black" />
+
+            <EditText
+                android:id="@+id/et_omu_test_yanlis_cevap3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="yanlis cevap3"
+                android:textColorHint="@android:color/black" />
+
+            <EditText
+                android:id="@+id/et_omu_test_yanlis_cevap4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="yanlis cevap4"
+                android:textColorHint="@android:color/black" />
+
+            <Button
+                android:id="@+id/btn_test_ekle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ekle" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
