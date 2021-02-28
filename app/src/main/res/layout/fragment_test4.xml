@@ -34,7 +34,7 @@
             android:textStyle="bold" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
+       <TextView
         android:id="@+id/tv_guncel_time"
         android:visibility="gone"
         android:layout_width="wrap_content"

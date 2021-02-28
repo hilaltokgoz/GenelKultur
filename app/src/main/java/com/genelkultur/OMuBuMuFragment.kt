@@ -40,7 +40,7 @@ class OMuBuMuFragment : Fragment() {
             val action=OMuBuMuFragmentDirections.actionOMuBuMuFragmentToOmuBuMuFragment3()
             Navigation.findNavController(it).navigate(action)
         }
-        button_bbm_vat.setOnClickListener {
+        button_obu_vat.setOnClickListener {
             val action=OMuBuMuFragmentDirections.actionOMuBuMuFragmentToOmuBuMuFragmentVat()
             Navigation.findNavController(it).navigate(action)
         }

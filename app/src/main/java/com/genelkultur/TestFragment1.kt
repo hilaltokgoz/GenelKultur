@@ -59,69 +59,69 @@ class TestFragment1 : Fragment() {
                  time=-1
              } //görünmez yap
              */
-            val et_time_text= dialog.et_time.text.toString()
-            if (et_time_text!=null&&et_time_text!=""){
-                time=et_time_text.toInt()
-                runnable = object : Runnable { //süreyi başlatma ayarları
-                    override fun run() {
-                        if (time == 0){
-                            tv_time.visibility=View.GONE
-                            timeEnd()
-                        }
-                        else if(time!=-1)
-                        {
+           val et_time_text= dialog.et_time.text.toString()
+if (et_time_text!=null&&et_time_text!=""){
+    time=et_time_text.toInt()
+    runnable = object : Runnable { //süreyi başlatma ayarları
+        override fun run() {
+            if (time == 0){
+                tv_time.visibility=View.GONE
+                timeEnd()
+            }
+            else if(time!=-1)
+            {
 
-                            tv_time.visibility=View.VISIBLE
-                            tv_time.text = "Süre : $time dk"
-                            time--
-                            handler.postDelayed(this, 60000)  ///saniye ayarladık
-                        }
-
-                    }
-                }
+                tv_time.visibility=View.VISIBLE
+                tv_time.text = "Süre : $time dk"
+                time--
+                handler.postDelayed(this, 60000)  ///saniye ayarladık
             }
 
-
-
-
-            handler.post(runnable)//runnable ı başlattık
-
-
-        }
-        dialog.radio_btn_random.setOnClickListener {
-            if (dialog.radio_btn_random.isChecked){
-                dialog.ll_clasic_settings.visibility=View.GONE
-            }
-        }
-        dialog.radio_btn_clasic.setOnClickListener {
-            if (dialog.radio_btn_clasic.isChecked){
-                dialog.ll_clasic_settings.visibility=View.VISIBLE
-            }
-        }
-        dialog.show()
-
-    }
-
-    private fun timeEnd() {//sonuç sayfası parametreleri  //tv_true_number:Int?,tv_false_number:Int?,tv_net_number:Float?
-        //TODO: timeri durdur. sonucu göster.
-        //Todo:show result dialogr
-        //todo: rouintg new test
-
-        time=-1
-        val dialogResult=Dialog(requireContext())
-        dialogResult.setContentView(R.layout.dialog_test_result)
-        dialogResult.show()
-        dialogResult.tv_true_number.text=trueResponse.toString()
-        dialogResult.tv_false_number.text=trueResponse.toString()
-        if (false3deltrue){
-            dialogResult.ll_net_count.visibility=View.VISIBLE
-         dialogResult.tv_net_number.text=(trueResponse-(falseResponse/3)).toString()
-
-        }
-        else    dialogResult.ll_net_count.visibility=View.GONE
-        dialogResult.btn_result.setOnClickListener { //dialoğa yönlendir.
-          dialogResult.cancel()
-            showSettingsDialog()
         }
     }
+}
+
+
+
+
+handler.post(runnable)//runnable ı başlattık
+
+
+}
+dialog.radio_btn_random.setOnClickListener {
+    if (dialog.radio_btn_random.isChecked){
+        dialog.ll_clasic_settings.visibility=View.GONE
+    }
+}
+dialog.radio_btn_clasic.setOnClickListener {
+    if (dialog.radio_btn_clasic.isChecked){
+        dialog.ll_clasic_settings.visibility=View.VISIBLE
+    }
+}
+dialog.show()
+
+}
+
+private fun timeEnd() {//sonuç sayfası parametreleri  //tv_true_number:Int?,tv_false_number:Int?,tv_net_number:Float?
+    //TODO: timeri durdur. sonucu göster.
+    //Todo:show result dialogr
+    //todo: rouintg new test
+
+    time=-1
+    val dialogResult=Dialog(requireContext())
+    dialogResult.setContentView(R.layout.dialog_test_result)
+    dialogResult.show()
+    dialogResult.tv_true_number.text=trueResponse.toString()
+    dialogResult.tv_false_number.text=trueResponse.toString()
+    if (false3deltrue){
+        dialogResult.ll_net_count.visibility=View.VISIBLE
+        dialogResult.tv_net_number.text=(trueResponse-(falseResponse/3)).toString()
+
+    }
+    else    dialogResult.ll_net_count.visibility=View.GONE
+    dialogResult.btn_result.setOnClickListener { //dialoğa yönlendir.
+        dialogResult.cancel()
+        showSettingsDialog()
+    }
+}
 }

@@ -39,6 +39,12 @@ class TestFragment : Fragment() {
             val action=TestFragmentDirections.actionTestFragmentToTestFragment3()
             Navigation.findNavController(it).navigate(action)
         }
+        button_test_vat.setOnClickListener {
+            val  action=TestFragmentDirections.actionTestFragmentToTestFragmentVat()
+            Navigation.findNavController(it).navigate(action)
+        }
+
+
     }
 
 }

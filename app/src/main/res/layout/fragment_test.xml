@@ -50,21 +50,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/appBarLayout" />
+        app:layout_constraintTop_toTopOf="@+id/appBarLayout"
+        app:layout_constraintVertical_bias="0.571" />
 
     <TextView
         android:id="@+id/textViewİcerik2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:layout_marginTop="150dp"
         android:text="Bölüm seçiniz..."
         android:textColor="@color/tide_water_green"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/butonTest1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/butonTest1"
+
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="@+id/textViewTest"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTest" />
 
     <Button
         android:id="@+id/butonTest1"
@@ -78,7 +80,8 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonTest2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewİcerik2" />
 
     <Button
         android:id="@+id/buttonTest2"
@@ -92,21 +95,38 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonTest3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butonTest1" />
 
     <Button
         android:id="@+id/buttonTest3"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="165dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/buton_test"
         android:text="GÜNCEL"
+        android:textColor="@color/set_sail_sampange"
+        android:textSize="@dimen/anasayfa_buton_size"
+        app:layout_constraintBottom_toTopOf="@+id/button_test_vat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTest2" />
+
+    <Button
+        android:id="@+id/button_test_vat"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="165dp"
+        android:background="@drawable/buton_test"
+        android:text="VATANDAŞLIK"
         android:textColor="@color/set_sail_sampange"
         android:textSize="@dimen/anasayfa_buton_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTest3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
