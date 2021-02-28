@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OmuBuMuFragment3">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".OmuBuMuFragmentVat">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -15,11 +14,9 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
         tools:ignore="MissingConstraints">
-
         <TextView
-            android:id="@+id/txt_title6"
+            android:id="@+id/txt_tit_v"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
@@ -28,16 +25,14 @@
             android:layout_toEndOf="@+id/btn_back"
             android:layout_toRightOf="@+id/btn_back"
             android:gravity="center"
-            android:text="GÜNCEL"
+            android:text="VATANDAŞLIK"
             android:textColor="@color/set_sail_sampange"
             android:textSize="25sp"
             android:textStyle="bold" />
     </com.google.android.material.appbar.AppBarLayout>
 
-
-
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/textView_v"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -45,29 +40,26 @@
         android:text="TextView"
         android:textColor="@color/dark_coffee"
         android:textSize="@dimen/o_mu_bu_mu1_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup3"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupVat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
-
+        app:layout_constraintTop_toTopOf="parent" />
     <RadioGroup
-    android:id="@+id/radioGroup3"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="5dp"
-    android:layout_marginEnd="5dp"
-    android:orientation="horizontal"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.476"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.467">
-
+        android:id="@+id/radioGroupVat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.467">
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/radioButtonVat1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
@@ -81,7 +73,7 @@
             android:textSize="@dimen/bbm_textView_size" />
 
         <RadioButton
-            android:id="@+id/radioButton6"
+            android:id="@+id/radioButtonVat2"
             android:layout_width="197dp"
             android:layout_height="77dp"
             android:layout_marginLeft="5dp"
@@ -94,10 +86,9 @@
             android:textColor="@color/tide_water_green"
             android:textSize="@dimen/bbm_textView_size" />
     </RadioGroup>
-
-       <ImageView
-        android:id="@+id/imageView15"
-           android:layout_height="75dp"
+    <ImageView
+        android:id="@+id/imageView_v"
+        android:layout_height="75dp"
         android:layout_width="75dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="24dp"
@@ -109,7 +100,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/imageView_v2"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginStart="48dp"
@@ -120,6 +111,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_OMuBuMuFragment_to_omuBuMuFragment3"
             app:destination="@id/omuBuMuFragment3" />
+        <action
+            android:id="@+id/action_OMuBuMuFragment_to_omuBuMuFragmentVat"
+            app:destination="@id/omuBuMuFragmentVat" />
     </fragment>
     <fragment
         android:id="@+id/OMuBuMuFragment1"
@@ -49,6 +52,9 @@
         <action
             android:id="@+id/action_bunlariBiliyorMusunFragment_to_BBmFragment3toA"
             app:destination="@id/BBmFragment3toA" />
+        <action
+            android:id="@+id/action_bunlariBiliyorMusunFragment_to_BBMFragmentVat"
+            app:destination="@id/BBMFragmentVat" />
     </fragment>
     <fragment
         android:id="@+id/bunlariBiliyorMusunFragment1"
@@ -107,6 +113,9 @@
         <action
             android:id="@+id/action_testFragment_to_testFragment3"
             app:destination="@id/testFragment3" />
+        <action
+            android:id="@+id/action_testFragment_to_testFragmentVat"
+            app:destination="@id/testFragmentVat" />
     </fragment>
     <fragment
         android:id="@+id/testFragment1"
@@ -155,4 +164,28 @@
             android:name="bilgi"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/BBMFragmentVat"
+        android:name="com.genelkultur.BBMFragmentVat"
+        android:label="fragment_b_b_m_vat"
+        tools:layout="@layout/fragment_b_b_m_vat" >
+        <action
+            android:id="@+id/action_BBMFragmentVat_to_BBMFragmentVatTo2"
+            app:destination="@id/BBMFragmentVatTo2" />
+    </fragment>
+    <fragment
+        android:id="@+id/omuBuMuFragmentVat"
+        android:name="com.genelkultur.OmuBuMuFragmentVat"
+        android:label="fragment_omu_bu_mu_vat"
+        tools:layout="@layout/fragment_omu_bu_mu_vat" />
+    <fragment
+        android:id="@+id/testFragmentVat"
+        android:name="com.genelkultur.TestFragmentVat"
+        android:label="fragment_test_vat"
+        tools:layout="@layout/fragment_test_vat" />
+    <fragment
+        android:id="@+id/BBMFragmentVatTo2"
+        android:name="com.genelkultur.BBMFragmentVatTo2"
+        android:label="fragment_b_b_m_vat_to2"
+        tools:layout="@layout/fragment_b_b_m_vat_to2" />
 </navigation>
