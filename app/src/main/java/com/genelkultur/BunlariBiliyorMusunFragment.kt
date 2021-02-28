@@ -46,7 +46,10 @@ class BunlariBiliyorMusunFragment : Fragment() {
             //Navigation.findNavController(it).navigate(action)
         }
 
-
+        button_test_vat.setOnClickListener {
+            val action=BunlariBiliyorMusunFragmentDirections.actionBunlariBiliyorMusunFragmentToBBMFragmentVat()
+            Navigation.findNavController(it).navigate(action)
+        }
 
     }
 

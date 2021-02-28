@@ -74,6 +74,7 @@
         android:textSize="@dimen/anasayfa_buton_size"
         app:layout_constraintBottom_toTopOf="@+id/button11"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewİcerik" />
 
@@ -88,6 +89,7 @@
         android:textSize="@dimen/anasayfa_buton_size"
         app:layout_constraintBottom_toTopOf="@+id/button12"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buton10" />
 
@@ -95,13 +97,30 @@
         android:id="@+id/button12"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="165dp"
         android:background="@drawable/buton_bbm"
         android:text="GÜNCEL"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_test_vat"
+        android:textColor="@color/tide_water_green"
+        android:textSize="@dimen/anasayfa_buton_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button11" />
+
+    <Button
+        android:id="@+id/button_test_vat"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="165dp"
+        android:background="@drawable/buton_bbm"
+        android:text="VATANDAŞLIK"
         android:textColor="@color/tide_water_green"
         android:textSize="@dimen/anasayfa_buton_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toBottomOf="@+id/button12"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

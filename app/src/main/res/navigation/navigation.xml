@@ -187,5 +187,9 @@
         android:id="@+id/BBMFragmentVatTo2"
         android:name="com.genelkultur.BBMFragmentVatTo2"
         android:label="fragment_b_b_m_vat_to2"
-        tools:layout="@layout/fragment_b_b_m_vat_to2" />
+        tools:layout="@layout/fragment_b_b_m_vat_to2" >
+        <argument
+            android:name="info"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -48,7 +48,7 @@ class BunlariBiliyorMusunFragment1 : Fragment() {
 
         listView.onItemClickListener=AdapterView.OnItemClickListener { parent, view, position, id ->   //item1 de position 0 olacak(indeks)
             val konu = konular[position]
-           val action=BunlariBiliyorMusunFragment1Directions.actionBunlariBiliyorMusunFragment1ToBBMFragment1toA(konu)
+            val action=BunlariBiliyorMusunFragment1Directions.actionBunlariBiliyorMusunFragment1ToBBMFragment1toA(konu)
             listView.findNavController().navigate(action)
 
         }
