@@ -21,7 +21,7 @@ class TestFragment1 : Fragment() {
     var time:Int = -1
     var trueResponse=0
     var falseResponse=0
-    var false3deltrue:Boolean=false
+    var false4deltrue:Boolean=false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,8 +47,8 @@ class TestFragment1 : Fragment() {
         val dialog =Dialog(requireContext())
         dialog.setContentView(R.layout.dialog_test_detail)
         dialog.setCancelable(false)
-        dialog.cb_3d1y.setOnClickListener {
-            false3deltrue=dialog.cb_3d1y.isChecked
+        dialog.cb_4d1y.setOnClickListener {
+            false4deltrue=dialog.cb_4d1y.isChecked
         }
         //if (radio_btn_random.isChecked) tv_time.visibility=View.GONE //eğer rastgele seçiliuyse süre yi görünmez yap.
         dialog.btn_start.setOnClickListener { dialog.cancel() //başla butonununa basınca dialogtan çık
@@ -113,9 +113,9 @@ private fun timeEnd() {//sonuç sayfası parametreleri  //tv_true_number:Int?,tv
     dialogResult.show()
     dialogResult.tv_true_number.text=trueResponse.toString()
     dialogResult.tv_false_number.text=trueResponse.toString()
-    if (false3deltrue){
+    if (false4deltrue){
         dialogResult.ll_net_count.visibility=View.VISIBLE
-        dialogResult.tv_net_number.text=(trueResponse-(falseResponse/3)).toString()
+        dialogResult.tv_net_number.text=(trueResponse-(falseResponse/4)).toString()
 
     }
     else    dialogResult.ll_net_count.visibility=View.GONE

@@ -103,11 +103,11 @@
 
                 </LinearLayout>
                 <CheckBox
-                    android:id="@+id/cb_3d1y"
+                    android:id="@+id/cb_4d1y"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="3 Yanlış 1 Doğruyu Götürsün."
+                    android:text="4 Yanlış 1 Doğruyu Götürsün."
                     android:buttonTint="@color/dark_coffee"
                     android:textColor="@color/tide_water_green"/>
             </LinearLayout>
