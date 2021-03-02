@@ -7,51 +7,73 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.navigation.findNavController
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_bunlari_biliyor_musun1.*
 
-
-class BunlariBiliyorMusunFragment1 : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    class BunlariBiliyorMusunFragment1 : Fragment() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
         }
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+        ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_bunlari_biliyor_musun1, container, false)
-
-////Datalar internetten çekilecek.Liste Oluşucak.
-
-
-
-
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        getDataTarih()
+     }
 
-        var konular=ArrayList<String>()
-        konular.add("inkilaplar")// elle yazarsak
-        konular.add("1.Dünya Savaşı")
-        konular.add("fkjgnjfnjfnjvndjnvjdnvjfdnjvfdvnjfdvnjdnvjdfnvjdfvjdnfvjdjvndfjvjdfnvjfnjdfvnjdfnvjdfvjdfnvjdfvjfnnjnvffnvdjnvkjdfjvndfjkvn")
+       fun getDataTarih() {
+           var tarihKonular = ArrayList<String>()
+           val ref_t = Firebase.database.getReference("BunlariBiliyormusunuz/Tarih")
+           ref_t.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (dataS in snapshot.children) {
+                    //veri key içerisi value
+                    tarihKonular.add(dataS.key.toString())
+                }
+                val adapter = ArrayAdapter(requireContext(),R.layout.list_row, R.id.textViewTarih,tarihKonular)
+                listView.adapter = adapter
+                listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+                        val konuT = tarihKonular[position]
+                        val action = BunlariBiliyorMusunFragment1Directions.actionBunlariBiliyorMusunFragment1ToBBMFragment1toA(konuT)
+                        listView.findNavController().navigate(action)
 
-        val adapter= ArrayAdapter(requireContext(),R.layout.list_row,R.id.textViewTarih,konular) //list row u kendim oluşturdum. list row daki text view id si textView5 .
-        listView.adapter=adapter //adapter ile liste eşitlendi
+                    }
+            }
 
-        //tıklanınca ne olacak
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
+            }
 
-        listView.onItemClickListener=AdapterView.OnItemClickListener { parent, view, position, id ->   //item1 de position 0 olacak(indeks)
-            val konu = konular[position]
-            val action=BunlariBiliyorMusunFragment1Directions.actionBunlariBiliyorMusunFragment1ToBBMFragment1toA(konu)
-            listView.findNavController().navigate(action)
-
-        }
+        })
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

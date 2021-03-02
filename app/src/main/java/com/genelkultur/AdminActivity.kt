@@ -1,16 +1,27 @@
 package com.genelkultur
 
+import android.graphics.PostProcessor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.renderscript.ScriptGroup
+import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.lifecycle.MutableLiveData
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_admin.*
+import java.lang.StringBuilder
 import java.util.*
 
 class AdminActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin)
         var bolum:String="Tarih"
@@ -127,10 +138,80 @@ class AdminActivity : AppCompatActivity() {
                et_test_yanlis_cevap2.setText("")
                et_test_yanlis_cevap3.setText("")
                et_test_yanlis_cevap4.setText("")
+
            }
            .addOnFailureListener {
                Toast.makeText(this, "Başarısız ${it.message.toString()}", Toast.LENGTH_SHORT).show()
            }
 
+/*
+     var getData=object : ValueEventListener{
+         override fun onDataChange(snapshot: DataSnapshot) {
+            var sbBBM=StringBuilder()//metin birleştirme sınıfı
+             for (i in snapshot.children){
+                 var bilgiBBM_cografya_konular=i.child("Cografya").getValue()
+                  sbBBM.append("${i.key} $bilgiBBM_cografya_konular $\n")
+
+             }
+              //binding.textViewCografya.setText(sbBBM)
+         }
+
+
+
+         override fun onCancelled(error: DatabaseError) {
+             Toast.makeText(applicationContext, error.message.toString(), Toast.LENGTH_SHORT)
+                 .show() //gösterilemezse toast mesajı göster.
+
+             Log.w("Failed to read value.", error.toException())
+         }
+
+     }
+        //veri hemen gelsin diye (buton kullanmadan aktarılsın)
+        dbRef.addValueEventListener(getData)
+        dbRef.addListenerForSingleValueEvent(getData)
+
+
+*/
+
     }
 }
+ /////Veri tabanından veri okumak için
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  println("dataSnapshot Children: " + dataSnapshot.children)
+//  println("dataSnapshot Value: " + dataSnapshot.value) //değerleri veriyor.
+//println("dataSnapshot Key: " + dataSnapshot.key) //hangi sınıfta çalışıyoruz
+

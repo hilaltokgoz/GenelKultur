@@ -226,7 +226,15 @@
                 android:layout_height="wrap_content"
                 android:text="ekle" />
 
+
         </LinearLayout>
+        <Button
+            android:id="@+id/okuma_butonu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Okuma Butonu">
+
+        </Button>
 
     </LinearLayout>
 

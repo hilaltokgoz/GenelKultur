@@ -28,7 +28,7 @@
             android:layout_toEndOf="@+id/btn_back"
             android:layout_toRightOf="@+id/btn_back"
             android:gravity="center"
-            android:text="COĞRAFYA"
+            android:text="VATANDAŞLIK"
             android:textColor="@color/set_sail_sampange"
             android:textSize="25sp"
             android:textStyle="bold" />
