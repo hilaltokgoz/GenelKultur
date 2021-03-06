@@ -42,8 +42,8 @@ class BunlariBiliyorMusunFragment : Fragment() {
         }
 
         button12.setOnClickListener {
-           //val action=BunlariBiliyorMusunFragmentDirections.actionBunlariBiliyorMusunFragmentToBBmFragment3toA(Firebase.database.getReference())
-            //Navigation.findNavController(it).navigate(action)
+           val action=BunlariBiliyorMusunFragmentDirections.actionBunlariBiliyorMusunFragmentToBBmFragment3toA("Güncel")
+            Navigation.findNavController(it).navigate(action)
         }
 
         button_test_vat.setOnClickListener {

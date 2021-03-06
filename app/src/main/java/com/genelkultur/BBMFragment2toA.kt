@@ -5,6 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_b_b_m_fragment1to_a.*
 import kotlinx.android.synthetic.main.fragment_b_b_m_fragment2to_a.*
 
@@ -29,6 +35,41 @@ class BBMFragment2toA : Fragment() {
         var cografya:String?=null
         arguments?.let {
            cografya=BBMFragment2toAArgs.fromBundle(it).cografya
+            cografya?.let { k->
+                getDataCografyaBilgi(k)
+            }
     }
-        if (cografya!=null) textViewC.text=cografya
-}}
+        imageView4.setOnClickListener {
+            cografya?.let { k->
+                getDataCografyaBilgi(k)
+            }
+        }
+        imageView3.setOnClickListener {
+            cografya?.let { k->
+                getDataCografyaBilgi(k)
+            }
+        }
+}
+
+
+    fun getDataCografyaBilgi(konu:String){
+        val ref_t = Firebase.database.getReference("BunlariBiliyormusunuz/Cografya/$konu")
+        ref_t.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val rnd = (0..snapshot.childrenCount - 1).random().toInt()
+                val ss = snapshot.children.toList()[rnd]
+                val data = ss.child("data").getValue().toString()
+                textViewC.text=data
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
+            }
+
+        })
+    }
+
+
+
+
+}

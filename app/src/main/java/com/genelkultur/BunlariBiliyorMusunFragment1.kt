@@ -41,9 +41,11 @@ import kotlinx.android.synthetic.main.fragment_bunlari_biliyor_musun1.*
            val ref_t = Firebase.database.getReference("BunlariBiliyormusunuz/Tarih")
            ref_t.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                var sbBBM=StringBuilder()
                 for (dataS in snapshot.children) {
                     //veri key içerisi value
                     tarihKonular.add(dataS.key.toString())
+
                 }
                 val adapter = ArrayAdapter(requireContext(),R.layout.list_row, R.id.textViewTarih,tarihKonular)
                 listView.adapter = adapter
