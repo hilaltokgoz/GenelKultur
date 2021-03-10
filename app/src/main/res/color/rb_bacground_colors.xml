@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <!--Butona tıklanmazsa buton rengi set sail olucak -->
+    <item android:state_enabled="false" android:color="#FAEBD7" />
+    <!--Cevap doğruyken -->
+    <item android:state_checked="true" android:color="#26D84F" />
+    <!--When Button is in selected state -->
+    <item android:state_checked="false" android:color="#F10E0E" />
+    <!--Default Background Color -->
+    <item android:color="#FAEBD7" />
+
+</selector>
