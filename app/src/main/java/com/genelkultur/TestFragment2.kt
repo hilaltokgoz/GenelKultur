@@ -1,15 +1,30 @@
 package com.genelkultur
 
 import android.app.Dialog
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
+import android.widget.Toast
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.dialog_test_detail.*
 import kotlinx.android.synthetic.main.dialog_test_result.*
+import kotlinx.android.synthetic.main.fragment_test2.*
+import kotlinx.android.synthetic.main.fragment_test2.rb_co1
+import kotlinx.android.synthetic.main.fragment_test2.rb_co2
+import kotlinx.android.synthetic.main.fragment_test2.rb_co3
+import kotlinx.android.synthetic.main.fragment_test2.rb_co4
+import kotlinx.android.synthetic.main.fragment_test2.rb_co5
 import kotlinx.android.synthetic.main.fragment_test3.*
+
 
 class TestFragment2 : Fragment() {
     var runnable:Runnable= Runnable {  }   //Runnable bir arayüz
@@ -22,7 +37,7 @@ class TestFragment2 : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
-
+    var trueAnswer :String?=null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +51,68 @@ class TestFragment2 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
        showSettingsDialogCografya()
+        getTestCografya()
+
+        rb_co1.setOnClickListener {
+            checkAnswer(rb_co1)
+        }
+
+
+        rb_co2.setOnClickListener {
+            checkAnswer(rb_co2)
+        }
+
+
+        rb_co3.setOnClickListener {
+            checkAnswer(rb_co3)
+        }
+
+        rb_co4.setOnClickListener {
+            checkAnswer(rb_co4)
+        }
+
+        rb_co5.setOnClickListener {
+            checkAnswer(rb_co5)
+        }
+
+
     }
+
+
+    private fun checkAnswer(radioButton: RadioButton) {
+        val answer:String?=radioButton.text.toString() //answer seeçilen cevap
+        if (answer==trueAnswer){
+            radioButton.setBackgroundColor(Color.GREEN)
+            //todo: dogru cevap verildi yapılacakları yap.
+            setEnableRadioButtons(false)
+        }
+        else{
+            radioButton.setBackgroundColor(Color.RED)
+
+            //todo:yanlış cevap verildi yapılacakları yap
+            setEnableRadioButtons(false)
+            showTrueRadiobutton()
+        }
+    }
+
+    private fun showTrueRadiobutton() {
+        if (rb_co1.text==trueAnswer) rb_co1.setBackgroundColor(Color.GREEN)
+        else if (rb_co2.text==trueAnswer) rb_co2.setBackgroundColor(Color.GREEN)
+        else if (rb_co3.text==trueAnswer) rb_co3.setBackgroundColor(Color.GREEN)
+        else if (rb_co4.text==trueAnswer) rb_co4.setBackgroundColor(Color.GREEN)
+        else if (rb_co5.text==trueAnswer) rb_co5.setBackgroundColor(Color.GREEN)
+    }
+
+    private fun setEnableRadioButtons(b: Boolean) {
+        rb_co1.isEnabled=b
+        rb_co2.isEnabled=b
+        rb_co3.isEnabled=b
+        rb_co4.isEnabled=b
+        rb_co5.isEnabled=b
+    }
+
+
+
  private fun showSettingsDialogCografya(){
      trueResponse=0
      falseResponse=0
@@ -97,8 +173,66 @@ class TestFragment2 : Fragment() {
             dialogResult.cancel()
             showSettingsDialogCografya()
     }
+
      }
- }
+
+
+    fun getTestCografya() {
+        val ref_t = Firebase.database.getReference("Test/Cografya")
+        ref_t.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val rnd = (0..snapshot.childrenCount - 1).random().toInt()//soruları random bi şekilde tut
+                val ss = snapshot.children.toList()[rnd]
+                val soru = ss.child("question").getValue().toString() //soruyu text e atadık.
+                soru?.let { s ->
+                    tv_cografya_soru1.text = s
+                    val cevap1 = ss.child("cevap1").getValue().toString()
+                    val cevap2 = ss.child("cevap2").getValue().toString()
+                    val cevap3 = ss.child("cevap3").getValue().toString()
+                    val cevap4 = ss.child("cevap4").getValue().toString()
+                    val cevap5 = ss.child("cevap5").getValue().toString()
+                    trueAnswer = cevap1
+                    val rndOption = (0..4).random().toInt() //5 seçenek var
+                    if (rndOption == 0) {
+                        rb_co1.text = cevap1
+                        rb_co2.text = cevap2
+                        rb_co3.text = cevap3
+                        rb_co4.text = cevap4
+                        rb_co5.text = cevap5
+
+                    } else if (rndOption == 1) {
+                        rb_co1.text = cevap5
+                        rb_co2.text = cevap4
+                        rb_co3.text = cevap3
+                        rb_co4.text = cevap2
+                        rb_co5.text = cevap1
+                    } else if (rndOption == 2) {
+                        rb_co1.text = cevap4
+                        rb_co2.text = cevap5
+                        rb_co3.text = cevap1
+                        rb_co4.text = cevap3
+                        rb_co5.text = cevap2
+                    } else if (rndOption == 3) {
+                        rb_co1.text = cevap2
+                        rb_co2.text = cevap1
+                        rb_co3.text = cevap3
+                        rb_co4.text = cevap4
+                        rb_co5.text = cevap5
+                    } else {
+                        rb_co1.text = cevap3
+                        rb_co2.text = cevap5
+                        rb_co3.text = cevap2
+                        rb_co4.text = cevap1
+                        rb_co5.text = cevap4
+                    }
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+}
 
 
 

@@ -57,7 +57,7 @@ tools:context=".TestFragment2">
 
 
     <TextView
-        android:id="@+id/textViewTest11"
+        android:id="@+id/tv_cografya_soru1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
@@ -83,7 +83,7 @@ tools:context=".TestFragment2">
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton16"
+            android:id="@+id/rb_co1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -96,7 +96,7 @@ tools:context=".TestFragment2">
             tools:layout_editor_absoluteY="241dp" />
 
         <RadioButton
-            android:id="@+id/radioButton17"
+            android:id="@+id/rb_co2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -109,7 +109,7 @@ tools:context=".TestFragment2">
             tools:layout_editor_absoluteY="325dp" />
 
         <RadioButton
-            android:id="@+id/radioButton18"
+            android:id="@+id/rb_co3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -122,7 +122,7 @@ tools:context=".TestFragment2">
             tools:layout_editor_absoluteY="417dp" />
 
         <RadioButton
-            android:id="@+id/radioButton19"
+            android:id="@+id/rb_co4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -135,7 +135,7 @@ tools:context=".TestFragment2">
             tools:layout_editor_absoluteY="486dp" />
 
         <RadioButton
-            android:id="@+id/radioButton20"
+            android:id="@+id/rb_co5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -155,7 +155,7 @@ tools:context=".TestFragment2">
         android:layout_marginBottom="24dp"
         android:background="@drawable/radio_button_test"
         android:padding="15dp"
-        android:src="@drawable/ic_baseline_arrow_forward_24"
+        android:src="@drawable/ic_baseline_refresh_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -163,6 +163,7 @@ tools:context=".TestFragment2">
     <ImageView
         android:id="@+id/imageView19"
         android:layout_width="75dp"
+        android:visibility="gone"
         android:layout_height="75dp"
         android:layout_marginStart="48dp"
         android:layout_marginBottom="24dp"
