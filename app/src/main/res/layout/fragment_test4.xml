@@ -55,7 +55,7 @@
 
 
     <TextView
-        android:id="@+id/textViewTest11"
+        android:id="@+id/tv_guncel_soru"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton16"
+            android:id="@+id/rb_guncel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -94,7 +94,7 @@
             tools:layout_editor_absoluteY="241dp" />
 
         <RadioButton
-            android:id="@+id/radioButton17"
+            android:id="@+id/rb_guncel2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -107,7 +107,7 @@
             tools:layout_editor_absoluteY="325dp" />
 
         <RadioButton
-            android:id="@+id/radioButton18"
+            android:id="@+id/rb_guncel3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -120,7 +120,7 @@
             tools:layout_editor_absoluteY="417dp" />
 
         <RadioButton
-            android:id="@+id/radioButton19"
+            android:id="@+id/rb_guncel4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -133,7 +133,7 @@
             tools:layout_editor_absoluteY="486dp" />
 
         <RadioButton
-            android:id="@+id/radioButton20"
+            android:id="@+id/rb_guncel5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -153,7 +153,7 @@
         android:layout_marginBottom="24dp"
         android:background="@drawable/radio_button_test"
         android:padding="15dp"
-        android:src="@drawable/ic_baseline_arrow_forward_24"
+        android:src="@drawable/ic_baseline_refresh_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -161,6 +161,7 @@
     <ImageView
         android:id="@+id/imageView21"
         android:layout_width="75dp"
+        android:visibility="gone"
         android:layout_height="75dp"
         android:layout_marginStart="48dp"
         android:layout_marginBottom="24dp"
@@ -168,9 +169,7 @@
         android:padding="15dp"
         android:src="@drawable/ic_baseline_arrow_back_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

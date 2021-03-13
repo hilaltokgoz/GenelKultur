@@ -1,12 +1,20 @@
 package com.genelkultur
 
 import android.app.Dialog
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
+import android.widget.Toast
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.dialog_test_detail.*
 import kotlinx.android.synthetic.main.dialog_test_result.*
 import kotlinx.android.synthetic.main.fragment_test1.*
@@ -27,6 +35,7 @@ class TestFragmentVat : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
+    var trueAnswer :String?=null
 
     override  fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +48,78 @@ class TestFragmentVat : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showSettingsDialogVatandaslik()
+
+        getTestVatandaslik()
+
+        rb_vatandaslik.setOnClickListener {
+            //checkAnswer(radioButt
+            checkAnswer(rb_vatandaslik)
+        }
+
+        rb_vatandaslik1.setOnClickListener {
+            checkAnswer(rb_vatandaslik1)
+        }
+
+
+        rb_vatandaslik2.setOnClickListener {
+            checkAnswer(rb_vatandaslik2)
+        }
+
+        rb_vatandaslik3.setOnClickListener {
+            checkAnswer(rb_vatandaslik3)
+
+        }
+        rb_vatandaslik4.setOnClickListener {
+            checkAnswer(rb_vatandaslik4)
+
+        }
     }
+
+
+    private fun checkAnswer(radioButton: RadioButton) {
+        val answer:String?=radioButton.text.toString() //answer seeçilen cevap
+        if (answer==trueAnswer){
+            radioButton.setBackgroundColor(Color.GREEN)
+            //todo: dogru cevap verildi yapılacakları yap.
+            setEnableRadioButtons(false)
+        }
+        else{
+            radioButton.setBackgroundColor(Color.RED)
+
+            //todo:yanlış cevap verildi yapılacakları yap
+            setEnableRadioButtons(false)
+            showTrueRadiobutton()
+        }
+    }
+
+    private fun showTrueRadiobutton() {
+        if (rb_vatandaslik.text==trueAnswer) rb_vatandaslik.setBackgroundColor(Color.GREEN)
+        else if (rb_vatandaslik1.text==trueAnswer) rb_vatandaslik1.setBackgroundColor(Color.GREEN)
+        else if (rb_vatandaslik2.text==trueAnswer) rb_vatandaslik2.setBackgroundColor(Color.GREEN)
+        else if (rb_vatandaslik3.text==trueAnswer) rb_vatandaslik3.setBackgroundColor(Color.GREEN)
+        else if (rb_vatandaslik4.text==trueAnswer) rb_vatandaslik4.setBackgroundColor(Color.GREEN)
+    }
+
+    private fun setEnableRadioButtons(b: Boolean) {
+        rb_vatandaslik.isEnabled=b
+        rb_vatandaslik1.isEnabled=b
+        rb_vatandaslik2.isEnabled=b
+        rb_vatandaslik3.isEnabled=b
+        rb_vatandaslik4.isEnabled=b
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private fun showSettingsDialogVatandaslik() {
         trueResponse=0
@@ -114,5 +194,61 @@ class TestFragmentVat : Fragment() {
             dialogResult.cancel()
             showSettingsDialogVatandaslik()
         }
+    }
+    fun getTestVatandaslik() {
+        val ref_t = Firebase.database.getReference("Test/Vatandaslik")
+        ref_t.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val rnd = (0..snapshot.childrenCount - 1).random().toInt()//soruları random bi şekilde tut
+                val ss = snapshot.children.toList()[rnd]
+                val soru = ss.child("question").getValue().toString() //soruyu text e atadık.
+                soru?.let { s ->
+                    textViewTestVat.text = s
+                    val cevap1 = ss.child("cevap1").getValue().toString()
+                    val cevap2 = ss.child("cevap2").getValue().toString()
+                    val cevap3 = ss.child("cevap3").getValue().toString()
+                    val cevap4 = ss.child("cevap4").getValue().toString()
+                    val cevap5 = ss.child("cevap5").getValue().toString()
+                    trueAnswer = cevap1
+                    val rndOption = (0..4).random().toInt() //5 seçenek var
+                    if (rndOption == 0) {
+                        rb_vatandaslik.text = cevap1
+                        rb_vatandaslik1.text = cevap2
+                        rb_vatandaslik2.text = cevap3
+                        rb_vatandaslik3.text = cevap4
+                        rb_vatandaslik4.text = cevap5
+
+                    } else if (rndOption == 1) {
+                        rb_vatandaslik.text = cevap5
+                        rb_vatandaslik1.text = cevap4
+                        rb_vatandaslik2.text = cevap3
+                        rb_vatandaslik3.text = cevap2
+                        rb_vatandaslik4.text = cevap1
+                    } else if (rndOption == 2) {
+                        rb_vatandaslik.text = cevap4
+                        rb_vatandaslik1.text = cevap5
+                        rb_vatandaslik2.text = cevap1
+                        rb_vatandaslik3.text = cevap3
+                        rb_vatandaslik4.text = cevap2
+                    } else if (rndOption == 3) {
+                        rb_vatandaslik.text = cevap2
+                        rb_vatandaslik1.text = cevap1
+                        rb_vatandaslik2.text = cevap3
+                        rb_vatandaslik3.text = cevap4
+                        rb_vatandaslik4.text = cevap5
+                    } else {
+                        rb_vatandaslik.text = cevap3
+                        rb_vatandaslik1.text = cevap5
+                        rb_vatandaslik2.text = cevap2
+                        rb_vatandaslik3.text = cevap1
+                        rb_vatandaslik4.text = cevap4
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }

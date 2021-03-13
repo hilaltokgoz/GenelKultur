@@ -1,12 +1,20 @@
 package com.genelkultur
 
 import android.app.Dialog
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
+import android.widget.Toast
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.dialog_test_detail.*
 import kotlinx.android.synthetic.main.dialog_test_result.*
 import kotlinx.android.synthetic.main.fragment_test1.*
@@ -23,7 +31,7 @@ class TestFragment3 : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
-
+    var trueAnswer :String?=null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,7 +45,68 @@ class TestFragment3 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val dialog= Dialog(requireContext())
         showSettingsDialogGuncel()
+        getTestGuncel()
+        rb_guncel.setOnClickListener {
+            //checkAnswer(radioButt
+            checkAnswer(rb_guncel)
+        }
+
+        rb_guncel2.setOnClickListener {
+            checkAnswer(rb_guncel2)
+        }
+
+
+        rb_guncel3.setOnClickListener {
+            checkAnswer(rb_guncel3)
+        }
+
+        rb_guncel4.setOnClickListener {
+            checkAnswer(rb_guncel4)
+
+        }
+        rb_guncel5.setOnClickListener {
+            checkAnswer(rb_guncel5)
+
+        }
+
     }
+
+
+
+    private fun checkAnswer(radioButton: RadioButton) {
+        val answer:String?=radioButton.text.toString() //answer seeçilen cevap
+        if (answer==trueAnswer){
+            radioButton.setBackgroundColor(Color.GREEN)
+            //todo: dogru cevap verildi yapılacakları yap.
+            setEnableRadioButtons(false)
+        }
+        else{
+            radioButton.setBackgroundColor(Color.RED)
+
+            //todo:yanlış cevap verildi yapılacakları yap
+            setEnableRadioButtons(false)
+            showTrueRadiobutton()
+        }
+    }
+
+    private fun showTrueRadiobutton() {
+        if (rb_guncel.text==trueAnswer) rb_guncel.setBackgroundColor(Color.GREEN)
+        else if (rb_guncel2.text==trueAnswer) rb_guncel2.setBackgroundColor(Color.GREEN)
+        else if (rb_guncel3.text==trueAnswer) rb_guncel3.setBackgroundColor(Color.GREEN)
+        else if (rb_guncel4.text==trueAnswer) rb_guncel4.setBackgroundColor(Color.GREEN)
+        else if (rb_guncel5.text==trueAnswer) rb_guncel5.setBackgroundColor(Color.GREEN)
+    }
+
+    private fun setEnableRadioButtons(b: Boolean) {
+        rb_guncel.isEnabled=b
+        rb_guncel2.isEnabled=b
+        rb_guncel3.isEnabled=b
+        rb_guncel4.isEnabled=b
+        rb_guncel5.isEnabled=b
+    }
+
+
+
     private fun showSettingsDialogGuncel() {
         trueResponse=0
         falseResponse=0
@@ -102,6 +171,64 @@ class TestFragment3 : Fragment() {
             dialogResult.cancel()
             showSettingsDialogGuncel()
         }
+    }
+
+
+    fun getTestGuncel() {
+        val ref_t = Firebase.database.getReference("Test/Guncel")
+        ref_t.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val rnd = (0..snapshot.childrenCount - 1).random().toInt()//soruları random bi şekilde tut
+                val ss = snapshot.children.toList()[rnd]
+                val soru = ss.child("question").getValue().toString() //soruyu text e atadık.
+                soru?.let { s ->
+                    tv_guncel_soru.text = s
+                    val cevap1 = ss.child("cevap1").getValue().toString()
+                    val cevap2 = ss.child("cevap2").getValue().toString()
+                    val cevap3 = ss.child("cevap3").getValue().toString()
+                    val cevap4 = ss.child("cevap4").getValue().toString()
+                    val cevap5 = ss.child("cevap5").getValue().toString()
+                    trueAnswer = cevap1
+                    val rndOption = (0..4).random().toInt() //5 seçenek var
+                    if (rndOption == 0) {
+                        rb_guncel.text = cevap1
+                        rb_guncel2.text = cevap2
+                        rb_guncel3.text = cevap3
+                        rb_guncel4.text = cevap4
+                        rb_guncel5.text = cevap5
+
+                    } else if (rndOption == 1) {
+                        rb_guncel.text = cevap5
+                        rb_guncel2.text = cevap4
+                        rb_guncel3.text = cevap3
+                        rb_guncel4.text = cevap2
+                        rb_guncel5.text = cevap1
+                    } else if (rndOption == 2) {
+                        rb_guncel.text = cevap4
+                        rb_guncel2.text = cevap5
+                        rb_guncel3.text = cevap1
+                        rb_guncel4.text = cevap3
+                        rb_guncel5.text = cevap2
+                    } else if (rndOption == 3) {
+                        rb_guncel.text = cevap2
+                        rb_guncel2.text = cevap1
+                        rb_guncel3.text = cevap3
+                        rb_guncel4.text = cevap4
+                        rb_guncel5.text = cevap5
+                    } else {
+                        rb_guncel.text = cevap3
+                        rb_guncel2.text = cevap5
+                        rb_guncel3.text = cevap2
+                        rb_guncel4.text = cevap1
+                        rb_guncel5.text = cevap4
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
+            }
+        })
     }
     }
 
