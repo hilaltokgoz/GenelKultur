@@ -16,42 +16,51 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_bunlari_biliyor_musun1.*
 
-    class BunlariBiliyorMusunFragment1 : Fragment() {
-        override fun onCreate(savedInstanceState: Bundle?) {
-         super.onCreate(savedInstanceState)
-        }
+class BunlariBiliyorMusunFragment1 : Fragment() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-        ): View? {
+    ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_bunlari_biliyor_musun1, container, false)
     }
 
 
-     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getDataTarih()
-     }
+    }
 
-       fun getDataTarih() {
-           var tarihKonular = ArrayList<String>()
-           val ref_t = Firebase.database.getReference("BunlariBiliyormusunuz/Tarih")
-           ref_t.addListenerForSingleValueEvent(object : ValueEventListener {
+    fun getDataTarih() {
+        var tarihKonular = ArrayList<String>()
+        val ref_t = Firebase.database.getReference("BunlariBiliyormusunuz/Tarih")
+        ref_t.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                var sbBBM=StringBuilder()
+                var sbBBM = StringBuilder()
                 for (dataS in snapshot.children) {
                     //veri key içerisi value
                     tarihKonular.add(dataS.key.toString())
 
                 }
-                val adapter = ArrayAdapter(requireContext(),R.layout.list_row, R.id.textViewTarih,tarihKonular)
+                val adapter = ArrayAdapter(
+                    requireContext(),
+                    R.layout.list_row,
+                    R.id.textViewTarih,
+                    tarihKonular
+                )
                 listView.adapter = adapter
-                listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+                listView.onItemClickListener =
+                    AdapterView.OnItemClickListener { parent, view, position, id ->
                         val konuT = tarihKonular[position]
-                        val action = BunlariBiliyorMusunFragment1Directions.actionBunlariBiliyorMusunFragment1ToBBMFragment1toA(konuT)
+                        val action =
+                            BunlariBiliyorMusunFragment1Directions.actionBunlariBiliyorMusunFragment1ToBBMFragment1toA(
+                                konuT
+                            )
                         listView.findNavController().navigate(action)
 
                     }
@@ -63,19 +72,5 @@ import kotlinx.android.synthetic.main.fragment_bunlari_biliyor_musun1.*
 
         })
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

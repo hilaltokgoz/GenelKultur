@@ -40,11 +40,7 @@ class BBMFragmentVatTo2 : Fragment() {
             }
             //çek...
         }
-        imageV2.setOnClickListener {
-            info?.let { k->
-                getDataVatandaslikBilgi(k)
-            }
-        }
+
         imageViewV.setOnClickListener {
             info?.let { k->
                 getDataVatandaslikBilgi(k)

@@ -9,7 +9,8 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout4"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
+        android:minHeight="65dp"
         android:background="@color/dark_coffee"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,11 +23,10 @@
             android:id="@+id/txt_title13"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:minHeight="65dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_toEndOf="@+id/btn_back"
-            android:layout_toRightOf="@+id/btn_back"
             android:gravity="center"
             android:text="COĞRAFYA"
             android:textColor="@color/set_sail_sampange"
@@ -47,7 +47,6 @@
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout4"
         tools:ignore="MissingConstraints">
@@ -71,31 +70,18 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/button_small_round"
         android:padding="15dp"
         android:src="@drawable/ic_baseline_refresh_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewT"
-        app:layout_constraintVertical_bias="0.0" />
+       />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="24dp"
-        android:visibility="gone"
-        android:background="@drawable/button_small_round"
-        android:padding="15dp"
-        android:src="@drawable/ic_baseline_arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewT"
-        app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

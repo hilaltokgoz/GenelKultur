@@ -39,11 +39,7 @@ class BBMFragment2toA : Fragment() {
                 getDataCografyaBilgi(k)
             }
     }
-        imageView4.setOnClickListener {
-            cografya?.let { k->
-                getDataCografyaBilgi(k)
-            }
-        }
+
         imageView3.setOnClickListener {
             cografya?.let { k->
                 getDataCografyaBilgi(k)

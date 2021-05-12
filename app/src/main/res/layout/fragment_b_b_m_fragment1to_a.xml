@@ -9,8 +9,8 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout3"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-
+        android:layout_height="wrap_content"
+         android:minHeight="65dp"
         android:background="@color/dark_coffee"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,20 +18,17 @@
         tools:ignore="MissingConstraints">
 
         <TextView
-
             android:id="@+id/txt_title12"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:minHeight="65dp"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/btn_back"
-            android:layout_toRightOf="@+id/btn_back"
+            android:layout_marginLeft="16dp"
             android:gravity="center"
             android:text="TARİH"
             android:textColor="@color/set_sail_sampange"
             android:textSize="25sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="63dp"
-            tools:layout_editor_absoluteY="300dp" />
+            android:textStyle="bold" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -50,7 +47,6 @@
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout3"
         tools:ignore="MissingConstraints"
         app:cardBackgroundColor="@color/light_hardal">
-
         <TextView
 
             android:id="@+id/tv_data"
@@ -65,37 +61,18 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-
             />
     </androidx.cardview.widget.CardView>
-
-
     <ImageView
         android:id="@+id/btn_right"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/button_small_round"
         android:padding="15dp"
         android:src="@drawable/ic_baseline_refresh_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/btn_left"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="48dp"
-        android:visibility="gone"
-        android:background="@drawable/button_small_round"
-        android:padding="15dp"
-        android:src="@drawable/ic_baseline_arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_right" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

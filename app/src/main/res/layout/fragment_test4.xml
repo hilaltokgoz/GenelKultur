@@ -145,18 +145,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="118dp" />
     </RadioGroup>
+
     <ImageView
         android:id="@+id/imageView20"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/radio_button_test"
         android:padding="15dp"
         android:src="@drawable/ic_baseline_refresh_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/imageView21"

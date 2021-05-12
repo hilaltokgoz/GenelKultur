@@ -19,10 +19,11 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="50dp"
-            android:layout_height="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="55dp"
+            android:minHeight="55dp"
             android:layout_marginLeft="5dp"
-
             android:layout_gravity="center|left"
             android:src="@drawable/ic_baseline_arrow_right_24" />
 
@@ -31,13 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="20dp"
             android:gravity="center"
             android:minHeight="100dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="5dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="5dp"
             android:text="TextView"
             android:textColor="@color/dark_coffee"
             android:textSize="@dimen/anasayfa_buton_size" />

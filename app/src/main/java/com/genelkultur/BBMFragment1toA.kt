@@ -52,11 +52,6 @@ class BBMFragment1toA : Fragment() {
                getDataTarihBilgi(k)
            }
        }
-       btn_left.setOnClickListener {
-           konu?.let { k->
-               getDataTarihBilgi(k)
-           }
-       }
 
     }
 
