@@ -50,6 +50,10 @@ class TestFragmentVat : Fragment() {
         showSettingsDialogVatandaslik()
 
         getTestVatandaslik()
+        iv_vat_refrest_test.setOnClickListener {
+            getTestVatandaslik()
+        }
+
 
         rb_vatandaslik.setOnClickListener {
             //checkAnswer(radioButt

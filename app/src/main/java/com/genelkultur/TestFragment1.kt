@@ -50,7 +50,9 @@ class TestFragment1 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         showSettingsDialog()
         getTestTarih()
-
+        iv_refresh_tarih_test.setOnClickListener {
+            getTestTarih()
+        }
         radioButton7.setOnClickListener {
             //checkAnswer(radioButt
             checkAnswer(radioButton7)

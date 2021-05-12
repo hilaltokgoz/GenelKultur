@@ -53,6 +53,9 @@ class TestFragment2 : Fragment() {
        showSettingsDialogCografya()
         getTestCografya()
 
+        iv_cog_ref_Test.setOnClickListener {
+            getTestCografya()
+        }
         rb_co1.setOnClickListener {
             checkAnswer(rb_co1)
         }

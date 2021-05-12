@@ -46,6 +46,9 @@ class TestFragment3 : Fragment() {
         val dialog= Dialog(requireContext())
         showSettingsDialogGuncel()
         getTestGuncel()
+        iv_guncel_refresh_test.setOnClickListener {
+            getTestGuncel()
+        }
         rb_guncel.setOnClickListener {
             //checkAnswer(radioButt
             checkAnswer(rb_guncel)
