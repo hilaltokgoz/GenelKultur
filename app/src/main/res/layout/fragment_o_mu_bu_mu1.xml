@@ -7,10 +7,11 @@
     tools:context=".OMuBuMuFragment1">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="65dp"
         android:background="@color/dark_coffee"
+        android:minHeight="65dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,109 +23,86 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:gravity="center"
+            android:minHeight="65dp"
             android:text="TARİH"
             android:textColor="@color/set_sail_sampange"
             android:textSize="25sp"
             android:textStyle="bold" />
     </com.google.android.material.appbar.AppBarLayout>
 
-
-
-
-
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:padding="15dp"
         android:text="TextView"
         android:textColor="@color/dark_coffee"
-        android:textSize="@dimen/o_mu_bu_mu1_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        android:textSize="25dp"
+       android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.646" />
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout8" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="390dp"
-        android:layout_height="94dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:minHeight="75dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467">
+        app:layout_constraintTop_toBottomOf="@+id/textView15">
 
 
         <RadioButton
             android:id="@+id/radioButton2"
-            android:buttonTint="@color/dark_coffee"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="10dp"
             android:autoSizeMaxTextSize="@dimen/anasayfa_buton_size"
             android:background="@color/set_sail_sampange"
+            android:buttonTint="@color/dark_coffee"
             android:text="RadioButton"
             android:textColor="@color/tide_water_green"
-            android:textSize="@dimen/bbm_textView_size" />
+            android:textSize="20dp" />
 
         <RadioButton
             android:id="@+id/radioButton"
-            android:buttonTint="@color/dark_coffee"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="15dp"
             android:autoSizeMaxTextSize="@dimen/anasayfa_buton_size"
             android:background="@color/set_sail_sampange"
+            android:buttonTint="@color/dark_coffee"
             android:text="RadioButton"
             android:textColor="@color/tide_water_green"
-            android:textSize="@dimen/bbm_textView_size" />
+            android:textSize="20dp" />
 
     </RadioGroup>
 
     <ImageView
 
-        android:id="@+id/imageView10"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="24dp"
+        android:id="@+id/iv_tarih_refresh_oBu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="75dp"
+        android:minHeight="75dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/button_small_round"
         android:padding="15dp"
         android:src="@drawable/ic_baseline_refresh_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="75dp"
-        android:visibility="gone"
-        android:layout_height="75dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/button_small_round"
-        android:padding="15dp"
-        android:src="@drawable/ic_baseline_arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-
-
-
-
-
-
+      />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

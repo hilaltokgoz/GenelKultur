@@ -14,6 +14,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_b_b_m_fragment2to_a.*
 import kotlinx.android.synthetic.main.fragment_o_mu_bu_mu2.*
 
 
@@ -33,9 +34,12 @@ class OMuBuMuFragment2 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         getDataCografyaOmuBumu()
 
-
+        iv_cografya_refresh_omubumu.setOnClickListener {
+                getDataCografyaOmuBumu()
+        }
 
 
 

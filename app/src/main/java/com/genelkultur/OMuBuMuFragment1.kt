@@ -38,6 +38,10 @@ class OMuBuMuFragment1 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getDataTarihOmuBumu()
+        iv_tarih_refresh_oBu.setOnClickListener {
+            getDataTarihOmuBumu()
+        }
+
 
         radioButton.setOnClickListener {
             if (radioButton.isChecked && trueAnswer==radioButton.text){

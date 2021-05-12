@@ -96,7 +96,7 @@
     </RadioGroup>
 
        <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/iv_guncel_refresh_oBu"
            android:layout_height="75dp"
         android:layout_width="75dp"
         android:layout_marginEnd="48dp"
@@ -106,20 +106,6 @@
         android:src="@drawable/ic_baseline_refresh_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView14"
-        android:visibility="gone"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/button_small_round"
-        android:padding="15dp"
-        android:src="@drawable/ic_baseline_arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
 

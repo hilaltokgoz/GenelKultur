@@ -34,6 +34,9 @@ class OmuBuMuFragment3 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getDataGuncelOmuBumu()
+        iv_guncel_refresh_oBu.setOnClickListener {
+            getDataGuncelOmuBumu()
+        }
 
         radioButton5.setOnClickListener {
             if (radioButton5.isChecked && trueAnswer==radioButton5.text){

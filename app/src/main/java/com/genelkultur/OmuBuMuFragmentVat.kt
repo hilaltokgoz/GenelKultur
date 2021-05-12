@@ -35,6 +35,12 @@ class OmuBuMuFragmentVat : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getDataVatandaslikOmuBumu()
+        iv_vat_refresh_oBu.setOnClickListener {
+            getDataVatandaslikOmuBumu()
+        }
+
+
+
         radioButtonVat1.setOnClickListener {
             if (radioButtonVat1.isChecked && trueAnswer==radioButtonVat1.text){
                 radioButtonVat1.setBackgroundColor(Color.GREEN)
@@ -56,13 +62,6 @@ class OmuBuMuFragmentVat : Fragment() {
             }
         }
     }
-
-
-
-
-
-
-
 
 
 
