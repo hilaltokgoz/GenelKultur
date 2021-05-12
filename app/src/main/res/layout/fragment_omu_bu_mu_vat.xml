@@ -7,6 +7,7 @@
     tools:context=".OmuBuMuFragmentVat">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout9"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:background="@color/dark_coffee"
@@ -15,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
+
         <TextView
             android:id="@+id/txt_tit_v"
             android:layout_width="match_parent"
@@ -35,56 +37,57 @@
         android:id="@+id/textView_v"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:gravity="center"
-        android:text="TextView"
+        android:includeFontPadding="false"
+        android:text=""
+        android:layout_marginTop="100dp"
         android:textColor="@color/dark_coffee"
-        android:textSize="@dimen/o_mu_bu_mu1_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroupVat"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout9" />
+
     <RadioGroup
         android:id="@+id/radioGroupVat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
+        android:minHeight="75dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467">
+        app:layout_constraintTop_toBottomOf="@+id/textView_v">
+
         <RadioButton
             android:id="@+id/radioButtonVat1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:autoSizeMaxTextSize="@dimen/anasayfa_buton_size"
             android:background="@color/set_sail_sampange"
             android:buttonTint="@color/dark_coffee"
+            android:includeFontPadding="false"
             android:padding="5dp"
-            android:text="RadioButton"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="                     "
             android:textColor="@color/tide_water_green"
-            android:textSize="@dimen/bbm_textView_size" />
+            android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/radioButtonVat2"
-            android:layout_width="197dp"
-            android:layout_height="77dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:autoSizeMaxTextSize="@dimen/anasayfa_buton_size"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           android:layout_weight="1"
+            android:layout_marginStart="5dp"
             android:background="@color/set_sail_sampange"
             android:buttonTint="@color/dark_coffee"
+            android:includeFontPadding="false"
             android:padding="5dp"
-            android:text="RadioButton"
+            android:text="                     "
             android:textColor="@color/tide_water_green"
-            android:textSize="@dimen/bbm_textView_size" />
+            android:textSize="20sp" />
     </RadioGroup>
     <ImageView
         android:id="@+id/iv_vat_refresh_oBu"

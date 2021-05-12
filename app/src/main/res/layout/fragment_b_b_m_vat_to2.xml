@@ -62,7 +62,8 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
             android:gravity="center"
-            android:text="Text View"
+            android:text=""
+            android:includeFontPadding="false"
             android:textColor="@color/tide_water_green"
             android:textSize="25dp"
 

@@ -55,6 +55,7 @@
             android:gravity="center"
             android:text="Atatürk, 1881 yılında
                  Dünya'ya gelmiştir."
+            android:includeFontPadding="false"
             android:textColor="@color/dark_coffee"
             android:textSize="25dp"
             android:layout_marginTop="15dp"

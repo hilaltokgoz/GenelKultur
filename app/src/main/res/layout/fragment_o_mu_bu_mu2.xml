@@ -42,9 +42,10 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="15dp"
-        android:text="TextView"
+        android:includeFontPadding="false"
+        android:text=""
         android:textColor="@color/dark_coffee"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,11 +53,11 @@
 
     <RadioGroup
         android:id="@+id/radioGroup2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:minHeight="75dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="30dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,33 +66,32 @@
 
         <RadioButton
             android:id="@+id/radioButton4"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="10dp"
-            android:autoSizeMaxTextSize="@dimen/anasayfa_buton_size"
+           android:layout_weight="1"
+
+            android:includeFontPadding="false"
+            android:layout_marginEnd="5dp"
             android:background="@color/set_sail_sampange"
             android:buttonTint="@color/dark_coffee"
-            android:text="RadioButton"
+            android:text="                     "
             android:textColor="@color/tide_water_green"
-            android:textSize="20dp"
+            android:textSize="20sp"
             />
 
 
         <RadioButton
             android:id="@+id/radioButton3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="15dp"
-            android:autoSizeMaxTextSize="@dimen/anasayfa_buton_size"
+            android:layout_marginStart="5dp"
+            android:includeFontPadding="false"
             android:background="@color/set_sail_sampange"
             android:buttonTint="@color/dark_coffee"
-            android:text="RadioButton"
+            android:text="                     "
             android:textColor="@color/tide_water_green"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
     </RadioGroup>
 
