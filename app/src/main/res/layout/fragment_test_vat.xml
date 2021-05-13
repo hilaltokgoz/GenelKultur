@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".TestFragmentVat">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout10"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
+        android:minHeight="65dp"
         android:background="@color/dark_coffee"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
@@ -21,11 +26,8 @@
             android:id="@+id/txt_title_vatandaslik"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:minHeight="65dp"
             android:layout_centerVertical="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_toEndOf="@+id/btn_back"
-            android:layout_toRightOf="@+id/btn_back"
             android:gravity="center"
             android:text="VATANDAŞLIK"
             android:textColor="@color/set_sail_sampange"
@@ -34,12 +36,12 @@
     </com.google.android.material.appbar.AppBarLayout>
     <TextView
         android:id="@+id/tv_vat_time"
-        android:visibility="gone"
+        android:layout_marginEnd="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:padding="10dp"
+        android:visibility="gone"
         android:background="@color/set_sail_sampange"
         android:gravity="center_vertical"
         android:minHeight="50dp"
@@ -54,112 +56,108 @@
         android:id="@+id/textViewTestVat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:includeFontPadding="false"
+        android:layout_marginTop="10dp"
         android:gravity="center"
+        android:padding="10dp"
+        android:includeFontPadding="false"
         android:text=""
         android:textColor="@color/dark_coffee"
-        android:textSize="@dimen/o_mu_bu_mu1_text_size"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_vat_time" />
 
     <RadioGroup
         android:id="@+id/rg_vatandaslik"
-        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textViewTestVat">
 
         <RadioButton
             android:id="@+id/rb_vatandaslik"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
-            android:includeFontPadding="false"
             android:background="@color/tide_water_green"
             android:buttonTint="@color/set_sail_sampange"
+            android:includeFontPadding="false"
             android:text=""
             android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            tools:layout_editor_absoluteX="6dp"
-            tools:layout_editor_absoluteY="241dp" />
+            android:textSize="25sp"
+             />
 
         <RadioButton
             android:id="@+id/rb_vatandaslik1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
-            android:includeFontPadding="false"
             android:background="@color/tide_water_green"
             android:buttonTint="@color/set_sail_sampange"
+            android:includeFontPadding="false"
             android:text=""
             android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            tools:layout_editor_absoluteX="103dp"
-            tools:layout_editor_absoluteY="325dp" />
+            android:textSize="25sp"
+             />
 
         <RadioButton
             android:id="@+id/rb_vatandaslik2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
-            android:includeFontPadding="false"
             android:background="@color/tide_water_green"
             android:buttonTint="@color/set_sail_sampange"
+            android:includeFontPadding="false"
             android:text=""
             android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="417dp" />
+            android:textSize="25sp"
+             />
 
         <RadioButton
             android:id="@+id/rb_vatandaslik3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
-            android:includeFontPadding="false"
             android:background="@color/tide_water_green"
             android:buttonTint="@color/set_sail_sampange"
+            android:includeFontPadding="false"
             android:text=""
             android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            tools:layout_editor_absoluteX="106dp"
-            tools:layout_editor_absoluteY="486dp" />
+            android:textSize="25sp"
+             />
 
         <RadioButton
             android:id="@+id/rb_vatandaslik4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
-            android:includeFontPadding="false"
             android:background="@color/tide_water_green"
             android:buttonTint="@color/set_sail_sampange"
+            android:includeFontPadding="false"
             android:text=""
             android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
+            android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="118dp" />
+             />
     </RadioGroup>
+
     <ImageView
         android:id="@+id/iv_vat_refrest_test"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/radio_button_test"
+        android:minWidth="75dp"
+        android:minHeight="75dp"
         android:padding="15dp"
         android:src="@drawable/ic_baseline_refresh_24"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintTop_toBottomOf="@+id/rg_vatandaslik" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TestFragment2">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout10"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
+        android:minHeight="65dp"
         android:background="@color/dark_coffee"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
         tools:ignore="MissingConstraints">
 
         <TextView
@@ -23,10 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_toEndOf="@+id/btn_back"
-            android:layout_toRightOf="@+id/btn_back"
+            android:minHeight="65dp"
             android:gravity="center"
             android:text="GÜNCEL"
             android:textColor="@color/set_sail_sampange"
@@ -36,18 +36,18 @@
 
        <TextView
         android:id="@+id/tv_guncel_time"
-        android:visibility="gone"
+           android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="16dp"
         android:padding="10dp"
         android:background="@color/set_sail_sampange"
         android:gravity="center_vertical"
         android:minHeight="50dp"
         android:text="Süre:   "
+           android:visibility="gone"
         android:textColor="@color/dark_coffee"
         android:textSize="20sp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout10">
 
@@ -58,43 +58,39 @@
         android:id="@+id/tv_guncel_soru"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:includeFontPadding="false"
         android:gravity="center"
+        android:includeFontPadding="false"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
         android:text=""
         android:textColor="@color/dark_coffee"
-        android:textSize="@dimen/o_mu_bu_mu1_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_guncel_time" />
 
     <RadioGroup
         android:id="@+id/radioButonTest4"
-        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/tv_guncel_soru">
 
         <RadioButton
             android:id="@+id/rb_guncel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/anasayfa_buton_size"
-            android:includeFontPadding="false"
+            android:layout_marginBottom="20dp"
             android:background="@color/tide_water_green"
             android:buttonTint="@color/set_sail_sampange"
+            android:includeFontPadding="false"
             android:text=""
             android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            tools:layout_editor_absoluteX="6dp"
-            tools:layout_editor_absoluteY="241dp" />
+            android:textSize="20sp"
+             />
 
         <RadioButton
             android:id="@+id/rb_guncel2"
@@ -102,13 +98,12 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
             android:background="@color/tide_water_green"
-            android:includeFontPadding="false"
             android:buttonTint="@color/set_sail_sampange"
+            android:includeFontPadding="false"
             android:text=""
             android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            tools:layout_editor_absoluteX="103dp"
-            tools:layout_editor_absoluteY="325dp" />
+            android:textSize="20sp"
+            />
 
         <RadioButton
             android:id="@+id/rb_guncel3"
@@ -120,9 +115,8 @@
             android:includeFontPadding="false"
             android:text=""
             android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="417dp" />
+            android:textSize="20sp"
+            />
 
         <RadioButton
             android:id="@+id/rb_guncel4"
@@ -131,12 +125,11 @@
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
             android:background="@color/tide_water_green"
             android:buttonTint="@color/set_sail_sampange"
-            android:text=""
             android:includeFontPadding="false"
+            android:text=""
             android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            tools:layout_editor_absoluteX="106dp"
-            tools:layout_editor_absoluteY="486dp" />
+            android:textSize="20sp"
+           />
 
         <RadioButton
             android:id="@+id/rb_guncel5"
@@ -145,26 +138,28 @@
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
             android:background="@color/tide_water_green"
             android:buttonTint="@color/set_sail_sampange"
-            android:text=""
             android:includeFontPadding="false"
+            android:text=""
             android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="118dp" />
+            />
     </RadioGroup>
 
     <ImageView
         android:id="@+id/iv_guncel_refresh_test"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="75dp"
+        android:minWidth="75dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/radio_button_test"
         android:padding="15dp"
         android:src="@drawable/ic_baseline_refresh_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButonTest4" />
 
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-tools:context=".TestFragment2">
-
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+     <androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+    tools:context=".TestFragment2">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/layout12"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
+        android:minHeight="65dp"
         android:background="@color/dark_coffee"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
@@ -25,10 +28,7 @@ tools:context=".TestFragment2">
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_toEndOf="@+id/btn_back"
-            android:layout_toRightOf="@+id/btn_back"
+            android:minHeight="65dp"
             android:gravity="center"
             android:text="COĞRAFYA"
             android:textColor="@color/set_sail_sampange"
@@ -38,15 +38,15 @@ tools:context=".TestFragment2">
 
     <TextView
         android:id="@+id/tv_cografya_time"
-        android:visibility="gone"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginEnd="20dp"
         android:background="@color/set_sail_sampange"
         android:gravity="center_vertical"
         android:minHeight="50dp"
         android:padding="10dp"
+        android:visibility="gone"
         android:text="Süre:   "
         android:textColor="@color/dark_coffee"
         android:textSize="20sp"
@@ -56,118 +56,116 @@ tools:context=".TestFragment2">
     </TextView>
 
 
-    <TextView
-        android:id="@+id/tv_cografya_soru1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:includeFontPadding="false"
-        android:gravity="center"
-        android:text=""
-        android:textColor="@color/dark_coffee"
-        android:textSize="@dimen/o_mu_bu_mu1_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+         <TextView
+             android:id="@+id/tv_cografya_soru1"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:includeFontPadding="false"
+             android:text=""
+             android:textColor="@color/dark_coffee"
+             android:layout_marginTop="10dp"
+             android:padding="10dp"
+             android:textSize="25sp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tv_cografya_time"
+             app:layout_constraintStart_toStartOf="parent"
+             tools:layout_editor_absoluteY="150dp" />
 
-    <RadioGroup
-        android:id="@+id/radioButonTest4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+         <RadioGroup
+             android:id="@+id/radioButonTest4"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="10dp"
+             android:layout_marginTop="50dp"
+             android:layout_marginRight="10dp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tv_cografya_soru1">
 
-        <RadioButton
-            android:id="@+id/rb_co1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/anasayfa_buton_size"
-            android:includeFontPadding="false"
-            android:background="@color/tide_water_green"
-            android:buttonTint="@color/set_sail_sampange"
-            android:text=""
-            android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            tools:layout_editor_absoluteX="6dp"
-            tools:layout_editor_absoluteY="241dp" />
+             <RadioButton
+                 android:id="@+id/rb_co1"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="@dimen/anasayfa_buton_size"
+                 android:background="@color/tide_water_green"
+                 android:buttonTint="@color/set_sail_sampange"
+                 android:includeFontPadding="false"
+                 android:text=""
+                 android:textColor="@color/set_sail_sampange"
+                 android:textSize="20sp"
+                  />
 
-        <RadioButton
-            android:id="@+id/rb_co2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/anasayfa_buton_size"
-            android:includeFontPadding="false"
-            android:background="@color/tide_water_green"
-            android:buttonTint="@color/set_sail_sampange"
-            android:text=""
-            android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            tools:layout_editor_absoluteX="103dp"
-            tools:layout_editor_absoluteY="325dp" />
+             <RadioButton
+                 android:id="@+id/rb_co2"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="@dimen/anasayfa_buton_size"
+                 android:background="@color/tide_water_green"
+                 android:buttonTint="@color/set_sail_sampange"
+                 android:includeFontPadding="false"
+                 android:text=""
+                 android:textColor="@color/set_sail_sampange"
+                 android:textSize="20sp"
+                 />
 
-        <RadioButton
-            android:id="@+id/rb_co3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/anasayfa_buton_size"
-            android:background="@color/tide_water_green"
-            android:buttonTint="@color/set_sail_sampange"
-            android:text=""
-            android:includeFontPadding="false"
-            android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="417dp" />
+             <RadioButton
+                 android:id="@+id/rb_co3"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="@dimen/anasayfa_buton_size"
+                 android:background="@color/tide_water_green"
+                 android:buttonTint="@color/set_sail_sampange"
+                 android:includeFontPadding="false"
+                 android:text=""
+                 android:textColor="@color/set_sail_sampange"
+                 android:textSize="20sp"
+                  />
 
-        <RadioButton
-            android:id="@+id/rb_co4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/anasayfa_buton_size"
-            android:background="@color/tide_water_green"
-            android:buttonTint="@color/set_sail_sampange"
-            android:text=""
-            android:includeFontPadding="false"
-            android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            tools:layout_editor_absoluteX="106dp"
-            tools:layout_editor_absoluteY="486dp" />
+             <RadioButton
+                 android:id="@+id/rb_co4"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="@dimen/anasayfa_buton_size"
+                 android:background="@color/tide_water_green"
+                 android:buttonTint="@color/set_sail_sampange"
+                 android:includeFontPadding="false"
+                 android:text=""
+                 android:textColor="@color/set_sail_sampange"
+                 android:textSize="20sp"
+                  />
 
-        <RadioButton
-            android:id="@+id/rb_co5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/anasayfa_buton_size"
-            android:background="@color/tide_water_green"
-            android:buttonTint="@color/set_sail_sampange"
-            android:text=""
-            android:textColor="@color/set_sail_sampange"
-            android:textSize="@dimen/bbm_textView_size"
-            android:includeFontPadding="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="118dp" />
-    </RadioGroup>
-    <ImageView
-        android:id="@+id/iv_cog_ref_Test"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/radio_button_test"
-        android:padding="15dp"
-        android:src="@drawable/ic_baseline_refresh_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+             <RadioButton
+                 android:id="@+id/rb_co5"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="@dimen/anasayfa_buton_size"
+                 android:background="@color/tide_water_green"
+                 android:buttonTint="@color/set_sail_sampange"
+                 android:includeFontPadding="false"
+                 android:text=""
+                 android:textColor="@color/set_sail_sampange"
+                 android:textSize="20sp"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                />
+         </RadioGroup>
+
+         <ImageView
+             android:id="@+id/iv_cog_ref_Test"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:minHeight="75dp"
+             android:minWidth="75dp"
+             android:layout_marginEnd="50dp"
+             android:background="@drawable/radio_button_test"
+             android:padding="15dp"
+             android:src="@drawable/ic_baseline_refresh_24"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/radioButonTest4" />
 
 
 
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
