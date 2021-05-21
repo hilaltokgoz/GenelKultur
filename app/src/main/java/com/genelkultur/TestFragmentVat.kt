@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -52,6 +53,11 @@ class TestFragmentVat : Fragment() {
         getTestVatandaslik()
         iv_vat_refrest_test.setOnClickListener {
             getTestVatandaslik()
+            rb_vatandaslik.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
+            rb_vatandaslik1.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
+            rb_vatandaslik2.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
+            rb_vatandaslik3.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
+            rb_vatandaslik4.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
         }
 
 
