@@ -52,7 +52,18 @@ class TestFragmentVat : Fragment() {
 
         getTestVatandaslik()
         iv_vat_refrest_test.setOnClickListener {
+            setEnableRadioButtons(true)
+
             getTestVatandaslik()
+
+            rb_vatandaslik.isChecked=false
+            rb_vatandaslik1.isChecked=false
+            rb_vatandaslik2.isChecked=false
+            rb_vatandaslik3.isChecked=false
+            rb_vatandaslik4.isChecked=false
+
+
+
             rb_vatandaslik.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
             rb_vatandaslik1.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
             rb_vatandaslik2.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))

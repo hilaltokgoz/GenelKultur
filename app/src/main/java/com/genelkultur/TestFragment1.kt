@@ -52,7 +52,18 @@ class TestFragment1 : Fragment() {
         showSettingsDialog()
         getTestTarih()
         iv_refresh_tarih_test.setOnClickListener {
+            setEnableRadioButtons(true)
+
             getTestTarih()
+
+            radioButton7.isChecked=false
+            radioButton8.isChecked=false
+            radioButton9.isChecked=false
+            radioButton10.isChecked=false
+            radioButton11.isChecked=false
+
+
+
             radioButton7.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
             radioButton8.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
             radioButton9.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))

@@ -55,7 +55,16 @@ class TestFragment2 : Fragment() {
         getTestCografya()
 
         iv_cog_ref_Test.setOnClickListener {
+            setEnableRadioButtons(true)
+
             getTestCografya()
+
+            rb_co1.isChecked=false
+            rb_co2.isChecked=false
+            rb_co3.isChecked=false
+            rb_co4.isChecked=false
+            rb_co5.isChecked=false
+
             rb_co1.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
             rb_co2.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
             rb_co3.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
@@ -83,8 +92,6 @@ class TestFragment2 : Fragment() {
         rb_co5.setOnClickListener {
             checkAnswer(rb_co5)
         }
-
-
     }
 
 
