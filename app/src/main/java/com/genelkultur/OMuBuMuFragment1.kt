@@ -38,11 +38,17 @@ class OMuBuMuFragment1 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         getDataTarihOmuBumu()
         iv_tarih_refresh_oBu.setOnClickListener {
             getDataTarihOmuBumu()
+
             radioButton.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
             radioButton2.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
+
+     
+
+
         }
 
 
@@ -66,6 +72,9 @@ class OMuBuMuFragment1 : Fragment() {
                 radioButton.setBackgroundColor(Color.GREEN)
             }
         }
+
+
+
     }
 
 
