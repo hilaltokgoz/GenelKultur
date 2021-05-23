@@ -1,13 +1,13 @@
 package com.genelkultur
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -17,14 +17,8 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_b_b_m_vat.*
 
 
-
 class BBMFragmentVat : Fragment() {
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,14 +43,21 @@ class BBMFragmentVat : Fragment() {
                     //veri key içerisi value
                     vatKonular.add(dataS.key.toString())
                 }
-                val adapter= ArrayAdapter(requireContext(),R.layout.list_view_vatandaslik,R.id.textViewVatandaslik,vatKonular) //list row u kendim oluşturdum. list row daki text view id si textView5 .
-                listViewV.adapter=adapter //adapter ile liste eşitlendi
-                listViewV.onItemClickListener= AdapterView.OnItemClickListener { parent, view, position, id ->   //item1 de position 0 olacak(indeks)
-                    val info = vatKonular[position]
-                    val action=BBMFragmentVatDirections.actionBBMFragmentVatToBBMFragmentVatTo2(info)
-                    listViewV.findNavController().navigate(action)
+                val adapter = ArrayAdapter(
+                    requireContext(),
+                    R.layout.list_view_vatandaslik,
+                    R.id.textViewVatandaslik,
+                    vatKonular
+                ) //list row u kendim oluşturdum. list row daki text view id si textView5 .
+                listViewV.adapter = adapter //adapter ile liste eşitlendi
+                listViewV.onItemClickListener =
+                    AdapterView.OnItemClickListener { parent, view, position, id ->   //item1 de position 0 olacak(indeks)
+                        val info = vatKonular[position]
+                        val action =
+                            BBMFragmentVatDirections.actionBBMFragmentVatToBBMFragmentVatTo2(info)
+                        listViewV.findNavController().navigate(action)
 
-                }
+                    }
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -65,8 +66,6 @@ class BBMFragmentVat : Fragment() {
 
         })
     }
-
-
 
 
 }

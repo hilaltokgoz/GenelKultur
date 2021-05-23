@@ -1,13 +1,13 @@
 package com.genelkultur
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -18,9 +18,6 @@ import kotlinx.android.synthetic.main.fragment_bunlari_biliyor_musun2.*
 
 
 class BunlariBiliyorMusunFragment2 : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-            }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,8 +34,8 @@ class BunlariBiliyorMusunFragment2 : Fragment() {
         getData()
 
 
-
     }
+
     fun getData() {
         var cografyaKonular = ArrayList<String>()
         //Bunları biliyormusunuz cografya demi burda konular mı olucak ?
@@ -51,11 +48,20 @@ class BunlariBiliyorMusunFragment2 : Fragment() {
                     // bize tarim lazım oyuzden keyi çekicez.
                     cografyaKonular.add(dataS.key.toString())
                 }
-                val adapter = ArrayAdapter(requireContext(), R.layout.list_row_cografya_bbm, R.id.textViewCografya, cografyaKonular)
+                val adapter = ArrayAdapter(
+                    requireContext(),
+                    R.layout.list_row_cografya_bbm,
+                    R.id.textViewCografya,
+                    cografyaKonular
+                )
                 listView2.adapter = adapter
-                listView2.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+                listView2.onItemClickListener =
+                    AdapterView.OnItemClickListener { parent, view, position, id ->
                         val konu = cografyaKonular[position]
-                        val action = BunlariBiliyorMusunFragment2Directions.actionBunlariBiliyorMusunFragment2ToBBMFragment2toA(konu)
+                        val action =
+                            BunlariBiliyorMusunFragment2Directions.actionBunlariBiliyorMusunFragment2ToBBMFragment2toA(
+                                konu
+                            )
                         listView2.findNavController().navigate(action)
                     }
             }
@@ -67,12 +73,6 @@ class BunlariBiliyorMusunFragment2 : Fragment() {
 
         })
     }
-
-
-
-
-
-
 
 
 }
