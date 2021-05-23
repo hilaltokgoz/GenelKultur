@@ -60,7 +60,7 @@
 
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rbTarihOptionB"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -73,7 +73,7 @@
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rbTarihOptionA"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

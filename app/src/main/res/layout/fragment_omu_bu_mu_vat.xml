@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_v">
 
         <RadioButton
-            android:id="@+id/radioButtonVat1"
+            android:id="@+id/rbVatandaslikOptionA"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/set_sail_sampange"
@@ -76,7 +76,7 @@
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/radioButtonVat2"
+            android:id="@+id/rbVatandaslikOptionB"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
            android:layout_weight="1"

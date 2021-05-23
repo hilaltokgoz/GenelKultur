@@ -2,28 +2,23 @@ package com.genelkultur
 
 import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.fragment_o_mu_bu_mu1.*
 import kotlinx.android.synthetic.main.fragment_omu_bu_mu3.*
 
 
 class OmuBuMuFragment3 : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-    var trueAnswer :String?=null
+    var trueAnswer: String? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,28 +32,41 @@ class OmuBuMuFragment3 : Fragment() {
         getDataGuncelOmuBumu()
         iv_guncel_refresh_oBu.setOnClickListener {
             getDataGuncelOmuBumu()
-            radioButton5.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
-            radioButton6.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
+            rbGuncelOptionA.isChecked = false
+            rbGuncelOptionB.isChecked = false
+
+            rbGuncelOptionA.setBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.set_sail_sampange
+                )
+            )
+            rbGuncelOptionB.setBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.set_sail_sampange
+                )
+            )
         }
 
-        radioButton5.setOnClickListener {
-            if (radioButton5.isChecked && trueAnswer==radioButton5.text){
-                radioButton5.setBackgroundColor(Color.GREEN)
+        rbGuncelOptionA.setOnClickListener {
+            if (rbGuncelOptionA.isChecked && trueAnswer == rbGuncelOptionA.text) {
+                rbGuncelOptionA.setBackgroundColor(Color.GREEN)
 
-            }else{
+            } else {
                 //Yanlış bildi.
-                radioButton5.setBackgroundColor(Color.RED)
-                radioButton6.setBackgroundColor(Color.GREEN)
+                rbGuncelOptionA.setBackgroundColor(Color.RED)
+                rbGuncelOptionB.setBackgroundColor(Color.GREEN)
             }
         }
-        radioButton6.setOnClickListener {
-            if (radioButton6.isChecked && trueAnswer==radioButton6.text){
+        rbGuncelOptionB.setOnClickListener {
+            if (rbGuncelOptionB.isChecked && trueAnswer == rbGuncelOptionB.text) {
                 //Doğru bildi
-                radioButton6.setBackgroundColor(Color.GREEN)
-            }else{
+                rbGuncelOptionB.setBackgroundColor(Color.GREEN)
+            } else {
                 //Yanlış bildi.
-                radioButton6.setBackgroundColor(Color.RED)
-                radioButton5.setBackgroundColor(Color.GREEN)
+                rbGuncelOptionB.setBackgroundColor(Color.RED)
+                rbGuncelOptionA.setBackgroundColor(Color.GREEN)
             }
         }
 
@@ -66,30 +74,26 @@ class OmuBuMuFragment3 : Fragment() {
     }
 
 
-
-
-
-
-
     fun getDataGuncelOmuBumu() {
         val ref_t = Firebase.database.getReference("OmuBumu/Guncel")
         ref_t.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val rnd = (0..snapshot.childrenCount - 1).random().toInt()//soruları random bi şekilde tut
+                val rnd =
+                    (0..snapshot.childrenCount - 1).random().toInt()//soruları random bi şekilde tut
                 val ss = snapshot.children.toList()[rnd]
-                val soru = ss.child("question").getValue().toString() //soruyu text e atadık.
-                soru?.let { s ->
+                val soru = ss.child("question").value.toString() //soruyu text e atadık.
+                soru.let { s ->
                     textView20.text = s
-                    val o1 = ss.child("o1").getValue().toString()
-                    val o2 = ss.child("o2").getValue().toString()
+                    val o1 = ss.child("o1").value.toString()
+                    val o2 = ss.child("o2").value.toString()
                     trueAnswer = o1
                     val rndOption = (0..1).random().toInt()//2 seçenek var 01,02
                     if (rndOption == 0) {
-                        radioButton5.text = o1
-                        radioButton6.text = o2
+                        rbGuncelOptionA.text = o1
+                        rbGuncelOptionB.text = o2
                     } else {
-                        radioButton5.text = o2
-                        radioButton6.text = o1
+                        rbGuncelOptionA.text = o2
+                        rbGuncelOptionB.text = o1
                     }
                 }
             }
@@ -98,4 +102,5 @@ class OmuBuMuFragment3 : Fragment() {
                 Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
             }
         })
-    }}
+    }
+}

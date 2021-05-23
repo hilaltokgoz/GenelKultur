@@ -1,33 +1,25 @@
 package com.genelkultur
 
 import android.graphics.Color
-import android.graphics.Color.RED
-import android.hardware.camera2.params.RggbChannelVector.RED
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.ColorLong
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.collection.LLRBNode
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.fragment_b_b_m_fragment1to_a.*
 import kotlinx.android.synthetic.main.fragment_o_mu_bu_mu1.*
 
 
 class OMuBuMuFragment1 : Fragment() {
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-    var trueAnswer :String?=null
+    var trueAnswer: String? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,42 +34,49 @@ class OMuBuMuFragment1 : Fragment() {
         getDataTarihOmuBumu()
         iv_tarih_refresh_oBu.setOnClickListener {
             getDataTarihOmuBumu()
+            rbTarihOptionA.isChecked = false
+            rbTarihOptionB.isChecked = false
 
-            radioButton.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
-            radioButton2.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
-
-     
+            rbTarihOptionA.setBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.set_sail_sampange
+                )
+            )
+            rbTarihOptionB.setBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.set_sail_sampange
+                )
+            )
 
 
         }
 
 
-        radioButton.setOnClickListener {
-            if (radioButton.isChecked && trueAnswer==radioButton.text){
-                radioButton.setBackgroundColor(Color.GREEN)
+        rbTarihOptionA.setOnClickListener {
+            if (rbTarihOptionA.isChecked && trueAnswer == rbTarihOptionA.text) {
+                rbTarihOptionA.setBackgroundColor(Color.GREEN)
 
-            }else{
-             //Yanlış bildi.
-                radioButton.setBackgroundColor(Color.RED)
-                radioButton2.setBackgroundColor(Color.GREEN)
-            }
-        }
-        radioButton2.setOnClickListener {
-            if (radioButton2.isChecked && trueAnswer==radioButton2.text){
-                //Doğru bildi
-                radioButton2.setBackgroundColor(Color.GREEN)
-            }else{
+            } else {
                 //Yanlış bildi.
-                radioButton2.setBackgroundColor(Color.RED)
-                radioButton.setBackgroundColor(Color.GREEN)
+                rbTarihOptionA.setBackgroundColor(Color.RED)
+                rbTarihOptionB.setBackgroundColor(Color.GREEN)
             }
         }
-
+        rbTarihOptionB.setOnClickListener {
+            if (rbTarihOptionB.isChecked && trueAnswer == rbTarihOptionB.text) {
+                //Doğru bildi
+                rbTarihOptionB.setBackgroundColor(Color.GREEN)
+            } else {
+                //Yanlış bildi.
+                rbTarihOptionB.setBackgroundColor(Color.RED)
+                rbTarihOptionA.setBackgroundColor(Color.GREEN)
+            }
+        }
 
 
     }
-
-
 
 
     fun getDataTarihOmuBumu() {
@@ -85,21 +84,22 @@ class OMuBuMuFragment1 : Fragment() {
 
         ref_t.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val rnd = (0..snapshot.childrenCount - 1).random().toInt()//soruları random bi şekilde tut
+                val rnd =
+                    (0..snapshot.childrenCount - 1).random().toInt()//soruları random bi şekilde tut
                 val ss = snapshot.children.toList()[rnd]
-                val soru=ss.child("question").getValue().toString() //soruyu text e atadık.
-                soru?.let {s->
-                    textView15.text=s
-                    val o1=ss.child("o1").getValue().toString()
-                    val o2=ss.child("o2").getValue().toString()
-                    trueAnswer=o1
-                    val rndOption=(0..1).random().toInt()//2 seçenek var 01,02
-                    if(rndOption==0){
-                        radioButton.text=o1
-                        radioButton2.text=o2
-                    }else{
-                        radioButton.text=o2
-                        radioButton2.text=o1
+                val soru = ss.child("question").value.toString() //soruyu text e atadık.
+                soru.let { s ->
+                    textView15.text = s
+                    val o1 = ss.child("o1").value.toString()
+                    val o2 = ss.child("o2").value.toString()
+                    trueAnswer = o1
+                    val rndOption = (0..1).random().toInt()//2 seçenek var 01,02
+                    if (rndOption == 0) {
+                        rbTarihOptionA.text = o1
+                        rbTarihOptionB.text = o2
+                    } else {
+                        rbTarihOptionA.text = o2
+                        rbTarihOptionB.text = o1
                     }
 
                 }
@@ -114,11 +114,7 @@ class OMuBuMuFragment1 : Fragment() {
         })
 
 
-
     }
-
-
-
 
 
 }
