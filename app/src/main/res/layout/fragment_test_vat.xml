@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewTestVat">
 
         <RadioButton
-            android:id="@+id/rb_vatandaslik"
+            android:id="@+id/rbVat_OptionA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -92,7 +92,7 @@
              />
 
         <RadioButton
-            android:id="@+id/rb_vatandaslik1"
+            android:id="@+id/rbVat_OptionB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -105,7 +105,7 @@
              />
 
         <RadioButton
-            android:id="@+id/rb_vatandaslik2"
+            android:id="@+id/rbVat_OptionC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -118,7 +118,7 @@
              />
 
         <RadioButton
-            android:id="@+id/rb_vatandaslik3"
+            android:id="@+id/rbVat_OptionD"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -131,7 +131,7 @@
              />
 
         <RadioButton
-            android:id="@+id/rb_vatandaslik4"
+            android:id="@+id/rbVat_OptionE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"

@@ -87,7 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewTest10">
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/rbOptionA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -101,7 +101,7 @@
             />
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/rbOptionB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -115,7 +115,7 @@
           />
 
         <RadioButton
-            android:id="@+id/radioButton9"
+            android:id="@+id/rbOptionC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -129,7 +129,7 @@
              />
 
         <RadioButton
-            android:id="@+id/radioButton10"
+            android:id="@+id/rbOptionD"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -143,7 +143,7 @@
              />
 
         <RadioButton
-            android:id="@+id/radioButton11"
+            android:id="@+id/rbOptionE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -159,7 +159,7 @@
     </RadioGroup>
 
     <ImageView
-        android:id="@+id/iv_refresh_tarih_test"
+        android:id="@+id/iv_RefreshTestTarih"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 

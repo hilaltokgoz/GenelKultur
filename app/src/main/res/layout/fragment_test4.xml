@@ -80,7 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_guncel_soru">
 
         <RadioButton
-            android:id="@+id/rb_guncel"
+            android:id="@+id/rbGuncelOptionA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -93,7 +93,7 @@
              />
 
         <RadioButton
-            android:id="@+id/rb_guncel2"
+            android:id="@+id/rbGuncelOptionB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -106,7 +106,7 @@
             />
 
         <RadioButton
-            android:id="@+id/rb_guncel3"
+            android:id="@+id/rbGuncelOptionC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -119,7 +119,7 @@
             />
 
         <RadioButton
-            android:id="@+id/rb_guncel4"
+            android:id="@+id/rbGuncelOptionD"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
@@ -132,7 +132,7 @@
            />
 
         <RadioButton
-            android:id="@+id/rb_guncel5"
+            android:id="@+id/rbGuncelOptionE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/anasayfa_buton_size"
