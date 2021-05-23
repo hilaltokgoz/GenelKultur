@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -54,7 +55,21 @@ class TestFragment2 : Fragment() {
         getTestCografya()
 
         iv_cog_ref_Test.setOnClickListener {
+            setEnableRadioButtons(true)
+
             getTestCografya()
+
+            rb_co1.isChecked=false
+            rb_co2.isChecked=false
+            rb_co3.isChecked=false
+            rb_co4.isChecked=false
+            rb_co5.isChecked=false
+
+            rb_co1.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
+            rb_co2.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
+            rb_co3.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
+            rb_co4.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
+            rb_co5.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
         }
         rb_co1.setOnClickListener {
             checkAnswer(rb_co1)
@@ -77,8 +92,6 @@ class TestFragment2 : Fragment() {
         rb_co5.setOnClickListener {
             checkAnswer(rb_co5)
         }
-
-
     }
 
 

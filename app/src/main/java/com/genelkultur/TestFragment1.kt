@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -51,7 +52,23 @@ class TestFragment1 : Fragment() {
         showSettingsDialog()
         getTestTarih()
         iv_refresh_tarih_test.setOnClickListener {
+            setEnableRadioButtons(true)
+
             getTestTarih()
+
+            radioButton7.isChecked=false
+            radioButton8.isChecked=false
+            radioButton9.isChecked=false
+            radioButton10.isChecked=false
+            radioButton11.isChecked=false
+
+
+
+            radioButton7.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
+            radioButton8.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
+            radioButton9.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
+            radioButton10.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
+            radioButton11.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.tide_water_green))
         }
         radioButton7.setOnClickListener {
             //checkAnswer(radioButt

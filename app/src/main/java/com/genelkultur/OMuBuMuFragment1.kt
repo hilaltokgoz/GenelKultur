@@ -42,8 +42,12 @@ class OMuBuMuFragment1 : Fragment() {
         getDataTarihOmuBumu()
         iv_tarih_refresh_oBu.setOnClickListener {
             getDataTarihOmuBumu()
-       //radioButton.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
-      // radioButton2.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
+
+            radioButton.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
+            radioButton2.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
+
+     
+
 
         }
 

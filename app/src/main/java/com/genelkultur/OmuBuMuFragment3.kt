@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -36,6 +37,8 @@ class OmuBuMuFragment3 : Fragment() {
         getDataGuncelOmuBumu()
         iv_guncel_refresh_oBu.setOnClickListener {
             getDataGuncelOmuBumu()
+            radioButton5.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
+            radioButton6.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
         }
 
         radioButton5.setOnClickListener {

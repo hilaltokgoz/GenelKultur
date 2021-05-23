@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -39,6 +40,8 @@ class OMuBuMuFragment2 : Fragment() {
 
         iv_cografya_refresh_omubumu.setOnClickListener {
                 getDataCografyaOmuBumu()
+        radioButton3.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
+        radioButton4.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.set_sail_sampange))
         }
 
 
