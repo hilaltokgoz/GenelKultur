@@ -121,12 +121,11 @@ class TestFragmentVat : Fragment() {
         val answer: String? = radioButton.text.toString() //answer seeçilen cevap
         if (answer == trueAnswer) {
             radioButton.setBackgroundColor(Color.GREEN)
-            //todo: dogru cevap verildi yapılacakları yap.
+            trueResponse++
             setEnableRadioButtons(false)
         } else {
             radioButton.setBackgroundColor(Color.RED)
-
-            //todo:yanlış cevap verildi yapılacakları yap
+            falseResponse++
             setEnableRadioButtons(false)
             showTrueRadiobutton()
         }
@@ -208,9 +207,9 @@ class TestFragmentVat : Fragment() {
         time = -1
         val dialogResult = Dialog(requireContext())
         dialogResult.setContentView(R.layout.dialog_test_result)
-        dialogResult.show()
+
         dialogResult.tv_true_number.text = trueResponse.toString()
-        dialogResult.tv_false_number.text = trueResponse.toString()
+        dialogResult.tv_false_number.text = falseResponse.toString()
         if (false4deltrue) {
             dialogResult.ll_net_count.visibility = View.VISIBLE
             dialogResult.tv_net_number.text = (trueResponse - (falseResponse / 4)).toString()
@@ -220,6 +219,7 @@ class TestFragmentVat : Fragment() {
             dialogResult.cancel()
             showSettingsDialogVatandaslik()
         }
+        dialogResult.show()
     }
 
     fun getTestVatandaslik() {

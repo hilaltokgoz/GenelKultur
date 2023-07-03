@@ -24,14 +24,15 @@ import kotlinx.android.synthetic.main.fragment_test1.*
 class TestFragment1 : Fragment() {
     //global tanımlama
 
+
     var runnable: Runnable = Runnable { }   //Runnable bir arayüz
     var handler: Handler = Handler()  //süreyi de handler da oluşturcam.
     var time: Int = -1
-    var trueResponse = 0
-    var falseResponse = 0
+    var trueResponse = 0 //doğru cevap
+    var falseResponse = 0 //yanlış cevap
     var false4deltrue: Boolean = false
-
     var trueAnswer: String? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -112,20 +113,18 @@ class TestFragment1 : Fragment() {
 
         }
     }
-
-
-    private fun checkAnswer(radioButton: RadioButton) {
+   fun checkAnswer(radioButton: RadioButton) {
         val answer: String? = radioButton.text.toString() //answer seeçilen cevap
         if (answer == trueAnswer) {
             radioButton.setBackgroundColor(Color.GREEN)
-            //todo: dogru cevap verildi yapılacakları yap.
+            trueResponse++
             setEnableRadioButtons(false)
         } else {
             radioButton.setBackgroundColor(Color.RED)
-
-            //todo:yanlış cevap verildi yapılacakları yap
+            falseResponse++
             setEnableRadioButtons(false)
             showTrueRadiobutton()
+
         }
     }
 
@@ -147,8 +146,7 @@ class TestFragment1 : Fragment() {
 
 
     private fun showSettingsDialog() {
-        trueResponse = 0
-        falseResponse = 0
+
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.dialog_test_detail)
         dialog.setCancelable(false)
@@ -159,7 +157,7 @@ class TestFragment1 : Fragment() {
         dialog.btn_start.setOnClickListener {
             dialog.cancel() //başla butonununa basınca dialogtan çık
 
-            val et_time_text = dialog.et_time.text.toString()
+            val et_time_text = dialog.et_time.text.toString()  //girilen süre alındı
             if (et_time_text != null && et_time_text != "") {
                 time = et_time_text.toInt()
                 runnable = object : Runnable { //süreyi başlatma ayarları
@@ -172,7 +170,7 @@ class TestFragment1 : Fragment() {
                             tv_time.visibility = View.VISIBLE
                             tv_time.text = "Süre : $time dk"
                             time--
-                            handler.postDelayed(this, 60000)  ///saniye ayarladık
+                            handler.postDelayed(this, 10000)  ///saniye ayarladık
                         }
 
                     }
@@ -194,16 +192,16 @@ class TestFragment1 : Fragment() {
     }
 
 
+
+
+
     private fun timeEnd() {//sonuç sayfası parametreleri  //tv_true_number:Int?,tv_false_number:Int?,tv_net_number:Float?
-        //TODO: timeri durdur. sonucu göster.
-        //Todo:show result dialogr
-        //todo: rouintg new test
         time = -1
         val dialogResult = Dialog(requireContext())
         dialogResult.setContentView(R.layout.dialog_test_result)
-        dialogResult.show()
         dialogResult.tv_true_number.text = trueResponse.toString()
-        dialogResult.tv_false_number.text = trueResponse.toString()
+        dialogResult.tv_false_number.text = falseResponse.toString()
+
         if (false4deltrue) {
             dialogResult.ll_net_count.visibility = View.VISIBLE
             dialogResult.tv_net_number.text = (trueResponse - (falseResponse / 4)).toString()
@@ -213,9 +211,10 @@ class TestFragment1 : Fragment() {
             dialogResult.cancel()
             showSettingsDialog()
         }
+        dialogResult.show()
     }
 
-
+// true+false=soru sayısını tut ,time end
     fun getTestTarih() {
         val ref_t = Firebase.database.getReference("Test/Tarih")
         ref_t.addListenerForSingleValueEvent(object : ValueEventListener {
