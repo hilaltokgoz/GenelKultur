@@ -7,12 +7,10 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -20,7 +18,6 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.dialog_test_detail.*
 import kotlinx.android.synthetic.main.dialog_test_result.*
-import kotlinx.android.synthetic.main.dialog_test_result.view.*
 import kotlinx.android.synthetic.main.fragment_test1.*
 
 
@@ -116,7 +113,8 @@ class TestFragment1 : Fragment() {
 
         }
     }
-   fun checkAnswer(radioButton: RadioButton) {
+
+    fun checkAnswer(radioButton: RadioButton) {
         val answer: String? = radioButton.text.toString() //answer seeçilen cevap
         if (answer == trueAnswer) {
             radioButton.setBackgroundColor(Color.GREEN)
@@ -195,9 +193,6 @@ class TestFragment1 : Fragment() {
     }
 
 
-
-
-
     private fun timeEnd() {//sonuç sayfası parametreleri  //tv_true_number:Int?,tv_false_number:Int?,tv_net_number:Float?
 
         time = -1
@@ -223,15 +218,20 @@ class TestFragment1 : Fragment() {
 
         dialogResult.btn_succes_rate.setOnClickListener {
             dialogResult.cancel()
+            //TODO("başarı oranını hesapla, progress bar değerini değiştir")
             dialogSuccessRate.show()
-        }
 
+
+
+
+        }
 
 
     }
 
 
-// true+false=soru sayısını tut ,time end
+
+    // true+false=soru sayısını tut ,time end
     fun getTestTarih() {
         val ref_t = Firebase.database.getReference("Test/Tarih")
         ref_t.addListenerForSingleValueEvent(object : ValueEventListener {
