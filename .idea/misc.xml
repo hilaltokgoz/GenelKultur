@@ -3,14 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/drawable/button_oval.xml" value="0.1035" />
+        <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/drawable/succes_button.xml" value="0.1035" />
         <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/layout/dialog_test_detail.xml" value="0.11666666666666667" />
         <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/layout/dialog_test_result.xml" value="0.11666666666666667" />
+        <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/layout/fragment_b_b_m_vat_to2.xml" value="0.1" />
+        <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/layout/fragment_b_bm_fragment3to_a.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/layout/fragment_test.xml" value="0.11666666666666667" />
         <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/layout/fragment_test1.xml" value="0.11666666666666667" />
         <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/layout/fragment_test2.xml" value="0.11666666666666667" />
         <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/layout/fragment_test3.xml" value="0.11666666666666667" />
         <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/layout/fragment_test4.xml" value="0.11666666666666667" />
         <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/layout/fragment_test_vat.xml" value="0.11666666666666667" />
+        <entry key="..\:/Users/hilal/AndroidStudioProjects/GenelKultur2/app/src/main/res/layout/success_rate_dialog.xml" value="0.152" />
       </map>
     </option>
   </component>

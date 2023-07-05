@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/tools">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp">
+        <TextView
+            android:id="@+id/text_succes_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Başarı Oranınız: " />
+
+        <com.daimajia.numberprogressbar.NumberProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            custom:progress_unreached_color="#CCCCCC"
+            custom:progress_reached_color="#3498DB"
+
+            custom:progress_unreached_bar_height="2.75dp"
+            custom:progress_reached_bar_height="3.5dp"
+
+            custom:progress_text_size="24sp"
+            custom:progress_text_color="#3498DB"
+            custom:progress_text_offset="1dp"
+            custom:progress_text_visibility="visible"
+
+            custom:progress_max="100"
+            custom:progress_current="80"
+
+            android:layout_marginTop="70dp"
+            />
+
+
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
